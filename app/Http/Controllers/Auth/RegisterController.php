@@ -45,14 +45,14 @@ use RegistersUsers;
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data) {
-        $xyz = Validator::make($data, [
+        return Validator::make($data, [
                     'full_name' => ['required', 'string', 'max:255'],
                     'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
                     'description' => ['required'],
                     'location' => ['required'],
                     'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
-        return $xyz;
+   
     }
 
     /**
