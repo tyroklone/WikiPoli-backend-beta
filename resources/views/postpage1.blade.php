@@ -275,10 +275,10 @@ padding-right: 20px;
 			<div class="navbar-collapse collapse" id="navbar9">
 				<ul id="main-navbar" class="navbar-nav ml-auto"> 
 					<li class="navbar-item mr-5">
-						<a href="signin.html" class="navbar-link" style="color: black;" id="logIn">Log In</a>
+						<a href="{{ route('login') }}" class="navbar-link" style="color: black;" id="logIn">Log In</a>
 					</li>
 					<li class="navbar-item mr-5">
-						<a href="signup.html" class="btn navbar-link" id="signUp" style="background-color: #6d9bf1;">Sign Up</a>
+						<a href="{{ route('register') }}" class="btn navbar-link" id="signUp" style="background-color: #6d9bf1;">Sign Up</a>
 					</li>
 				</ul>
 			</div>
