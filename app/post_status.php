@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class post_status extends Model
+class Post_status extends Model
 {
     //
 }
