@@ -1,0 +1,204 @@
+
+/* The pop-modal (background) */
+.pop-modal {
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width */
+  overflow: auto; /* Enable scroll if needed */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 1s
+}
+
+/* pop-modal Content */
+.pop-modal-content {
+  border-top:2px solid lightgrey;
+  z-index: 100;
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  width: 100%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s;
+  left:0px;
+}
+
+/* The Close Button */
+.pop-close{
+  cursor: pointer;
+color: #aaaaaa;
+/* float: right; */
+font-size: 28px;
+font-weight: bold;
+position: relative;
+left: 98%;
+}
+@media screen  and (max-width: 1450px){
+  .pop-close{
+    left:97%;
+  }
+}
+@media screen  and (max-width: 800px){
+  .pop-close{
+    left:96%;
+  }
+}
+@media screen  and (max-width: 560px){
+  .pop-close{
+    left:95%;
+  }
+}
+@media screen  and (max-width: 425px){
+  .pop-close{
+    left:94%;
+  }
+}
+@media screen  and (max-width: 370px){
+  .pop-close{
+    left:92%;
+  }
+}
+
+
+.pop-close:hover,
+.pop-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+.pop-modal-body {
+    cursor:pointer;
+    text-align: center;
+    color:#6d9bf1;
+    font-size:150%;
+}
+.pop-modal-body:hover{
+    opacity: 0.5;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {bottom: -300px; opacity: 0} 
+  to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+/* For newsmodal */
+
+
+/* FOR NEWS LETTER MODAL by @laplaceAbdullah */
+
+#newsLetter{
+  cursor:pointer;
+  margin-top:0px;
+}
+@media screen  and (max-width: 430px){
+  .pop-modal-body{
+    font-size:100%;
+  }
+}
+/* The Modal (background) */
+.news-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* modal on small screens */
+@media screen  and (max-width: 415px){
+    .news-modal{
+      padding-top: 30px; /* Location of the box */
+    }
+}
+
+/* Modal Content */
+.news-modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.news-close {
+  box-sizing: border-box;
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.news-close:hover,
+.news-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Style the form element with a border around it */
+form {
+  border: 4px solid #f1f1f1;
+}
+
+/* Add some padding and a grey background color to containers */
+.news-container {
+  padding: 20px;
+  background-color: #f1f1f1;
+  text-align:center;
+}
+.news-container h2{      
+    color: #6d9bf1;
+}
+
+/* Style the input elements and the submit button */
+.news-container input[type=text], input[type=submit] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Add margins to the checkbox */
+.news-container input[type=checkbox] {
+  margin-top: 16px;
+}
+
+/* Style the submit button */
+.news-container input[type=submit] {
+  background-color: #6d9bf1;
+  color: white;
+  border: none;
+}
+
+.news-container input[type=submit]:hover {
+  opacity: 0.8;
+}

@@ -1,0 +1,140 @@
+body,html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Lato';
+    box-sizing: border-box;
+}
+.logo{margin-left: -2%;}
+.navbar-nav{margin-right: -6%;}
+@media only screen and (max-width: 768px){
+    .navbar-nav{margin-left: 4%;}
+}
+#signUp{
+    color: white;
+    padding: 8px 20px;
+}
+#logIn{
+    margin-top: 5px;
+    font-size: 1.5em;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+    border-color: #000;
+}
+.search{
+    overflow: auto;
+    margin-top: 10px;
+}
+.search input[type="text"]{
+    padding: 6px 5px;
+    width: 30%;
+    margin-left: 55%;
+}
+.search input[type="edit"]
+{
+    border: 0px;
+    background: none;
+    background-color: #6D9BF1;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius-top-right: 5px;
+    cursor:pointer;
+    margin-right: 5px;
+
+}
+@media only screen and (max-width : 780px)
+{
+    .search input[type="edit"]{margin-top: 5px; float: left; margin-left: 5%;}
+    .search input[type="text"]{
+        width: 90%;
+        margin-left: 5%;
+    }
+
+}
+.col-sm {
+    border: 2px solid #6D9BF1;
+    margin-top: 70px;
+}
+#post-1{
+    margin-right: 80px;
+}
+@media only screen and (max-width: 780px){
+    #post-1{
+        margin-right: -80px;
+    }
+}
+@media only screen and (max-width: 780px){
+    .col-sm{
+        border: none;
+        margin-top: 30px;
+        margin-left: -7%;
+    }
+
+}
+.post{
+    padding: 10px 10px 10px 60px;
+}
+.icon a{
+    padding-right: 7px;
+}
+.icon{padding-bottom: 30px;}
+.pagination{
+    float: right;
+    margin-top: 50px;
+    margin-right: 80px;
+}
+.pages li{
+    display: inline;
+    padding-right: 20px;
+}
+
+
+#footer {
+    background-color: #6D9BF1;
+    padding-top: 10px;
+    /* height: 300px; */
+    width: 100%;
+}
+
+.links {
+    padding-top: 5px;
+}
+
+.social-links h3,
+.quick-links li {
+    list-style-type: none;
+    padding-top: 5px;
+}
+
+.social-links h3,
+.quick-links li:first-child {
+    color: #ffffff;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+.quick-links li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.social-links a span {
+    color: #ffffff;
+    letter-spacing: 20px;
+}
+
+.social-links p,
+.copyright p {
+    padding-top: 10px;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.line{
+    display: none;
+}

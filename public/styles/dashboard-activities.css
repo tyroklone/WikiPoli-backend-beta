@@ -1,0 +1,258 @@
+/* Table of content
+	1. Global styling
+	2. Layout
+	3. Typography
+		3.1 Lists
+		3.2 Links
+		3.3 Buttons
+		3.4 Images
+	*/
+
+/****************
+	1. Global styling
+	*****************/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 13px;
+	font-family: "Lato", segoe UI, sans-serif;
+	color: #000000;
+}
+
+/****************
+	2. Layout
+	*****************/
+
+.dashboard-container {
+	display: block;
+}
+
+.most-recent-activity {
+	margin: 20px auto 10px auto;
+	padding: 10px 10px 50px 10px;
+	border: 1px solid #6d9bf1;
+}
+
+.container-activity {
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0px 2px 5px 0px #000;
+}
+
+.container-activity-2,
+.container-activity-3 {
+	margin-top: 30px;
+}
+
+.activity {
+	text-align: center;
+}
+
+/****************
+	3. Typography
+	*****************/
+
+/* 3.1 Lists */
+
+.logo{
+ flex-basis: 50%;
+}
+
+.main-ul {
+text-align: right;
+flex-basis: 50%;
+margin-right: 10px;
+
+}
+
+ul {
+	list-style-type: none;
+	display: inline;
+}
+
+.active {
+	background: #6d9bf1;
+	padding: 4px 0px 4px 10px;
+}
+
+#admin-sidebar-general .sidebar-links
+{
+	padding: 3px 25px;
+}
+main.admin-main-general
+{
+	padding: 20px;
+}
+#activity-intro
+{
+	font-size: 35px;
+	color: rgba(0, 0, 0, 0.8);
+}
+#search-ish
+{
+	text-align: left;
+	padding-left: 40px;
+}
+@media (max-width: 860px)
+{
+	.top-bar {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin: 2rem auto;
+	}
+	.top-bar > *
+	{
+		align-self: stretch;
+		text-align: center;
+	}
+	#name-plate
+	{
+		font-size: 20px;
+	}
+}
+/* 3.2 Links */
+
+.active a {
+	color: #fff;
+	
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* 3.3 Buttons */
+
+.search-btn {
+	background: #6d9bf1;
+	color: #fff;
+	padding-left: 10px;
+	border-radius: 0px;
+}
+
+.activity-cta {
+	background: #6d9bf1;
+	color: #fff;
+	border: none;
+	padding: 0.2em 0.5em;
+}
+
+/*Hover state*/
+
+.search-btn:hover,
+.activity-cta:hover {
+	color: #fff;
+}
+
+/* 3.4 Images */
+
+.profile {
+	position: absolute;
+	top: 18px;
+	margin-left: 15px;
+	width: 20px;
+	height: 20px;
+}
+
+/* 3.5 Texts */
+
+h1 span {
+	color: #6d9bf1;
+}
+
+h1,
+h2 {
+	font-size: 1.2rem;
+}
+
+.activity > p {
+	margin-top: 20px;
+}
+
+@media screen and (min-width: 860px) {
+	/*****************
+		1. Global styling
+		*****************/
+	* {
+		font-size: 17px;
+	}
+
+	/*****************
+		2. Layout
+		*****************/
+	aside {
+		width: 25%;
+	}
+
+
+	.top-bar {
+		display: flex;
+		justify-content: space-between;
+		margin: 2rem auto;
+	}
+
+
+	.container-activity {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		padding: 20px 5px;
+	}
+	/*****************
+		3. Typography
+		*****************/
+	.profile {
+		position: absolute;
+		top: 18px;
+		margin-left: 13px;
+		width: 28px;
+		height: 28px;
+	}
+}
+
+.input-icons i {
+	position: absolute;
+}
+
+.input-icons {
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+.icon {
+	padding: 10px;
+	color: gray;
+	min-width: 50px;
+	text-align: center;
+}
+
+.input-field {
+	width: 60%;
+	padding: 5px;
+	padding-top: 5px;
+	padding-bottom: 7px;
+	text-align: center;
+}
+
+@media screen and (min-width: 1152px) {
+	* {
+		font-size: 20px;
+	}
+	.container-activity {
+		width: 90%;
+		padding: 25px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	.most-recent-activity > p {
+		margin-left: 5%;
+	}
+}

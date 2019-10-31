@@ -1,0 +1,162 @@
+body {
+  width: 100%;
+  margin: 0;
+  padding: 2%;
+  color: #000;
+}
+#logo {
+  margin: 4%;
+}
+
+.firstnav li {
+  list-style-type: none;
+  display: inline-block;
+  float: right;
+  margin: 3%;
+  font-weight: 500;
+}
+.firstnav li a {
+  color: #000;
+}
+.firstnav li a:hover {
+  text-decoration: none;
+}
+#btn {
+  border-radius: 0px !important;
+  color: #fff;
+}
+#input {
+  outline: none !important;
+}
+.input-group-text {
+  border-radius: 0px !important;
+  background-color: blue !important;
+  color: #fff !important;
+}
+#create {
+  /*    margin-top: 82%;*/
+  font-weight: 500;
+}
+#create:hover {
+  text-decoration: none;
+}
+#more {
+  float: right;
+  font-weight: 500;
+}
+#more:hover {
+  text-decoration: none;
+}
+
+#footer {
+	background-color: #6d9bf1;
+	margin-top: 3%;
+	width: 100%;
+	
+}
+
+.links {
+	padding-top: 20px;
+}
+
+.quick-links li {
+	list-style-type: none;
+	padding-top: 10px;
+}
+
+.quick-links li:first-child {
+	color: #ffffff;
+	padding-bottom: 10px;
+	font-weight: bold;
+}
+
+.quick-links li a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.social-links a span {
+	color: #ffffff;
+	letter-spacing: 120px;
+	padding-left: 2%;
+}
+
+#main > p {
+	padding-top: 20px;
+	color: #6d9bf1;
+	font-size: 15px;
+	text-align: ju;
+}
+#main > p {
+	padding-top: 20px;
+	color: #6d9bf1;
+	font-size: 20px;
+}
+
+#footer p {
+	color: #ffffff;
+	font-size: 12px;
+}
+
+#footer h3 {
+	color: #fff;
+}
+
+@media only screen and (min-width: 768px) {
+	h1 {
+		font-size: 30px;
+	}
+	#footer {
+		width: 100%;
+	}
+	.social-links a span {
+		text-align: center;
+		letter-spacing: 100px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+	h1 {
+		font-size: 30px;
+	}
+	#footer {
+		margin-top: 100px;
+		padding-top: 70px;
+		height: 600px;
+		width: 100%;
+	}
+	.social-links a span {
+		text-align: center;
+		letter-spacing: 150px;
+  }
+}
+
+.social-link ul {
+	list-style-type: none;
+}
+
+.social-link li {
+	display: inline-block;
+	padding-left: 20px;
+	text-align: center;
+}
+.social-link span {
+	color: #fff;
+}
+
+
+/* Responsive styling */
+@media screen and (max-width: 600px) {
+	h1 {
+		font-size: 30px;
+	}
+	#footer {
+		margin-top: 100px;
+		padding-top: 10px;
+		height: 600px;
+		width: 100%;
+	}
+	.social-links a span {
+		letter-spacing: 120px;
+	}
+}
