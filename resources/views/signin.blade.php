@@ -10,7 +10,12 @@
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/56f496c8ed.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles/signin.css">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta name="google-signin-client_id" content="1068946914665-71onhsr4ncro5ajdgaouccneam74ifcv.apps.googleusercontent.com">
+    <script src="./js/googleauth.js"></script>
+
+    <link rel="stylesheet" href="{{ asset('css/styles/signin.css') }}"/>
     <link rel="icon" type="img/png" href="images/favicon.png">
 </head>
 
@@ -40,6 +45,8 @@
                             </div>
 
                             <button class="btn btn-lg btn-primary btn-block" type="submit" >Log In</button>
+                            <!-- <button class="btn btn-lg btn-primary btn-block btn-google" type="submit" ><i class="fab fa-google"></i> Log In with Google</button> -->
+                            <div class="g-signin2" data-onsuccess="onSignIn"></div>
                                     <div class="forg">
                                         <p class="forg"><a href="forgotpassword.html">Forgot Password?</a></p>
                                     </div>
@@ -62,8 +69,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="scripts/login.js"></script>
-
+    <script type="text/javascript" src="{{ asset('js/scripts/login.js') }}"></script>
 </body>
 
 </html>
