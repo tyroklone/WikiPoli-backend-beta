@@ -20,7 +20,6 @@ class RegisterController extends Controller {
       |
      */
 
-    
 use RegistersUsers;
 
     /**
@@ -46,14 +45,15 @@ use RegistersUsers;
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data) {
-        $xyz = Validator::make($data, [
+        
+        return Validator::make($data, [
                     'full_name' => ['required', 'string', 'max:255'],
                     'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
                     'description' => ['required'],
                     'location' => ['required'],
                     'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
-        return $xyz;
+   
     }
 
     /**
@@ -62,8 +62,8 @@ use RegistersUsers;
      * @param  array  $data
      * @return \App\User
      */
-    protected function create (array $data) {
- 
+    protected function create(array $data) {
+
         return User::create([
                     'full_name' => $data['full_name'],
                     'email' => $data['email'],
