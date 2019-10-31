@@ -249,7 +249,7 @@ h1 {
           <ul class="nav navbar-nav ml-auto menu">
           
             <li class="nav-item active">
-              <a class="nav-link " href="postpage1.html"><strong>Posts</strong></a>
+              <a class="nav-link " href="{{ url('/post') }}"><strong>Posts</strong></a>
             </li>
           
             <li class="nav-item">
