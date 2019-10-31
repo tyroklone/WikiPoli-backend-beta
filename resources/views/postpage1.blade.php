@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href= "{{ asset('css/styles/postpage1.css') }}"/>
 	<link rel="stylesheet" href="{{ asset('css/styles/index.css') }}"/>
 	<link rel="icon" type="img/png" href="images/favicon.png">
-	<title>Posts</title>
+	<title>WikiPoli | Posts</title>
 
 	<style>
 
@@ -268,7 +268,7 @@ padding-right: 20px;
 <body>
 	<nav class="navbar navbar-expand-lg navbar-custom bg-custom">
 		<div class="container">
-			<a href="index.html" class="logo"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571745363/u0zhq4fwslfr4u5lx5qt.png" alt="logo" class="img-fluid" width="150px;"></a>
+			<a href="{{ url('/') }}" class="logo"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571745363/u0zhq4fwslfr4u5lx5qt.png" alt="logo" class="img-fluid" width="150px;"></a>
 			<button class="navbar-toggler float-right custom-toggler" type="button" data-toggle="collapse" data-target="#navbar9" style="color: #000000;">
 				<span class="navbar-toggler-icon"></span>
 			</button>
