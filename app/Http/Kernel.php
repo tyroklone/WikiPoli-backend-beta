@@ -1,3 +1,4 @@
+
 <?php
 
 namespace App\Http;
@@ -83,3 +84,4 @@ class Kernel extends HttpKernel {
     ];
 
 }
+

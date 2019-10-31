@@ -1,3 +1,4 @@
+
 <?php
 
 namespace App\Http\Controllers\Auth;
@@ -73,3 +74,4 @@ use RegistersUsers;
     }
 
 }
+
