@@ -7,12 +7,14 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
+use Laravelista\Comments\Commenter;
 
 class User extends Authenticatable {
 
     use HasApiTokens,
         Notifiable,
-        HasRoles;
+        HasRoles,
+        Commenter;
 
     /**
      * The attributes that are mass assignable.
