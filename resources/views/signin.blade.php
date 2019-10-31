@@ -17,6 +17,106 @@
 
     <link rel="stylesheet" href="{{ asset('css/styles/signin.css') }}"/>
     <link rel="icon" type="img/png" href="images/favicon.png">
+
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Lato';
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .container {
+            display: table;
+            width: 100%;
+            height: 100%;
+            min-height: 100%;
+        }
+
+        .container-inner {
+            display: table-cell;
+            vertical-align: top;
+        }
+
+        .cover-container {
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .inner {
+            padding: 2rem;
+        }
+
+        .forg {
+            text-align: right;
+            margin: 8px 25px 5px 0;
+            text-decoration: none;
+        }
+
+        .forg a {
+        color: #6D9BF1 !important;
+        }
+
+        .forg p a:hover {
+            color: red !important;
+            text-decoration: none;
+        }
+        .text-center {
+            margin-top: 12px;
+        }
+        .text-center a:hover {
+            color: red !important;
+            text-decoration: none;
+        }
+
+        .btn-block {
+            background-color: #6D9BF1 !important;
+        }
+
+        .form-control,
+        .btn-block {
+            width: 80%;
+            margin-left: 12%;
+            margin-bottom: 2rem;
+            height: 50px;
+        }
+
+        .login_form h2{
+            font-size: 2.25rem;
+            margin-left: 25px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .cover {
+            padding: 0 1.5rem;
+        }
+
+        .cover .btn-lg {
+            padding: .7rem 1.rem;
+            font-weight: 500;
+        }
+
+        @media (min-width: 40em) {
+            .container-inner {
+                vertical-align: middle;
+            }
+
+            .cover-container {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 62em) {
+            .cover-container {
+                width: 42rem;
+            }
+        }
+
+
+    </style>
 </head>
 
 <body>
