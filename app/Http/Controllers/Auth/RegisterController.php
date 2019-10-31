@@ -20,7 +20,6 @@ class RegisterController extends Controller {
       |
      */
 
-    
 use RegistersUsers;
 
     /**
@@ -62,8 +61,8 @@ use RegistersUsers;
      * @param  array  $data
      * @return \App\User
      */
-    protected function create (array $data) {
- 
+    protected function create(array $data) {
+
         return User::create([
                     'full_name' => $data['full_name'],
                     'email' => $data['email'],
