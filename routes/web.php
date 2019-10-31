@@ -27,6 +27,11 @@ Route::get('/post', function () {
     return view('postpage1');
 });
 
+
+Route::get('/make_admin/{email}', 'SuperController@convert_to_admin');
+
+Route::get('/remove_admin/{email}', 'SuperController@revert_to_user');
+
 // Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
