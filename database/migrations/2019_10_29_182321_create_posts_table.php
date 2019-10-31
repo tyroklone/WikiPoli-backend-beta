@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title', 45);
             $table->longtext('body', 45);
+            $table->integer('status')->default(0); // 0 = awaiting aprroval - 1 = approved - 2 = approval denied
             $table->integer('author_id')->unsigned();
             $table->integer('post_id')->unsigned();
             $table->timestamps();

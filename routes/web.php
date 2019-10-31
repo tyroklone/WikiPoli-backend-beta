@@ -28,6 +28,9 @@ Route::get('/post', function () {
     return view('postpage1');
 });
 
+Route::get('/post/{id}', 'PostsController@show')->name('post.show');
+
+
 // Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
