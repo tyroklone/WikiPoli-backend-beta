@@ -1,0 +1,140 @@
+html,body{
+    padding:0;
+    margin:0;
+}
+select
+{
+    cursor: pointer;
+}
+
+.sitename{
+    font-size:22px;
+    font-weight:bold;
+    color:#000000;
+}
+.poli{
+    color:#6A9AD1;
+}
+.hello{
+    padding-left:60em;
+}
+.label{
+    color: rgba(0, 0, 0, 0.7);
+}
+.admin-main-general
+{
+    padding: 1rem;
+}
+.bluebutton{
+    color:white;
+    background-color:#6A9AD1;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding: 0.8rem 2rem;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    display: block;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+}
+.bluebutton:hover
+{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+.rightlink{
+    margin-left:47em;
+}
+.leftlink{
+    margin-left:12em;
+}
+.profimg{
+    margin-left:2%;
+    border:1px solid lightgray;
+    border-radius: 50%;
+    padding:0.5%;
+}
+a{
+    color:#6A9AD1;
+}
+.input-field{
+    font-size:1.2em;
+    font-family: inherit;
+    padding: 0.3rem 0.2rem;
+    width: 250px;
+}
+.forms
+{
+    padding: 0.5rem;
+}
+.forms #container-form
+{
+    padding: 1rem;
+    border: 1px solid #6D9BF1;
+}
+.form-flex
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 4rem;
+}
+.form-flex > *
+{
+    align-self: center;
+    margin-right: 5rem;
+}
+.form-flex .label
+{
+    display: block;
+    margin-bottom: 0.5rem;
+}
+#privilege-intro
+{
+    font-weight: lighter;
+    text-align: center;
+}
+#privilege-edit
+{
+    font-weight: lighter;
+}
+#all-admins
+{
+    margin-top: 3rem;
+    font-size: 20px;
+    padding: 1rem 3rem;
+    border: 1px solid #6D9BF1;
+    display: block;
+    color: #6D9BF1;
+    background-color: inherit;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+}
+#all-admins:hover
+{
+    color: white;
+    background-color: #6D9BF1;
+}
+@media screen and (max-width: 860px)
+{
+    #privilege-intro
+    {
+        margin: 3rem auto;
+    }
+    .form-flex
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 2rem;
+    }
+    .form-flex > *
+    {
+        align-self: flex-start;
+        margin-right: 0;
+    }
+    #all-admins
+    {
+        margin: 3rem auto;
+    }
+}

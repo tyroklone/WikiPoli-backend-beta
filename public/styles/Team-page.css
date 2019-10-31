@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+*{
+	margin: 0;
+	padding: 0; 
+	box-sizing: border-box;
+}
+body{
+	font-size: 10px;
+	font-family: Lato;
+}
+a{
+	text-decoration: none;
+	color: #fff;
+}
+.navbar img {
+    width: 150px;
+    margin-left: 50px;
+}
+.sign-up {
+    background-color: #6d9bf1;
+    color: #ffebef;
+}
+
+.navbar ul li a {
+    margin: 0 20px;
+    /* font-family: Lato; */
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 48px;
+    color: #6d9bf1;
+}
+
+.nav-link {
+    color: #6d9bf1!important;
+}
+
+.active {
+    border-radius: 0%;
+    padding: 0 30px;
+    background-color: #6d9bf1;
+}
+.heading{
+	font-size: 3.5rem;
+	letter-spacing: 3px;
+	margin-right: -1px;
+	margin-bottom: 5rem;
+	text-align: center;
+	color: #111;
+	position: relative;
+}
+.card-wrap{
+	display: flex;
+	align-items: center;
+	align- content: center;
+	flex-direction: column;
+}
+.card{
+	width: 32rem;
+	background-color: #E9ECFB;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 2rem 0;
+	box-shadow: 3px 3px 5px #111;
+}
+.profile-img{
+	width: 15rem;
+	height: 15rem;
+	object-fit: cover;
+	border-radius: 50%;
+	display: block;
+	margin: 0 auto;
+}
+.card h1{
+	font-size: 2.5rem;
+	color: #111;
+	margin: 1.5rem 0;
+}
+.title{
+	color: #111;
+	font-size: 1.5rem;
+	font-weight: 300;
+}
+.social-media{
+	width: 100%;
+	list-style: none;
+	display: inline-flex;
+	justify-content: center;
+	padding: 2rem 0;
+	margin-top: 1.5rem;
+	border-top: 1px solid #6d9bf1;
+}
+.social-media i{
+	font-size: 3rem;
+	padding: 2rem;
+}
+.fa-facebook-square{
+	color: #3b5999;
+}
+.fa-twitter-square{
+	color: #55acee;
+}
+#footer{
+             background: #6D9BF1 !important;
+  }
+  .social-links h3 {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+@media screen and (min-width:700px){
+	.card-wrap{
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	}
+	.card{
+		margin: 2rem;
+	}
+}

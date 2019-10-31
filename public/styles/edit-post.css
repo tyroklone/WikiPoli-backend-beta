@@ -1,0 +1,21 @@
+#politic-head {
+    color: #6D9BF1;
+}
+
+#edit {
+    border: 0px;
+    background: none;
+    background-color: #6D9BF1;
+    color: #fff;
+    padding: 8px 20px;
+    cursor:pointer;
+    margin-right: 10px;
+    float: right;
+    margin-bottom: 50px;
+    margin-top: 50px;
+
+}
+
+body {
+    font-weight: bolder;
+}

@@ -1,0 +1,180 @@
+body,html {
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  }
+  
+  
+  
+  nav.bg-light {
+    background-color: #ffffff !important;
+  }
+  
+  
+  ul.navbar-nav .nav-item .nav-link {
+    color: #000000;
+    font-size: 20px;
+    line-height: 36px;
+  }
+  
+  #logo {
+   width: 60%;
+   padding-left:.3rem;
+  }
+  
+  .odd span {
+  color: #E81E1E;
+  }
+  
+  li.bottom-border a {
+  border-bottom: 5px solid #6D9BF1;
+  }
+  
+  
+  #log-out{
+   background-color:#6D9BF1;
+   width: 80px;
+   color: #FFFFFF ;
+   text-align: center;
+   width: 7rem;
+  font-size: 1.2rem;
+  line-height: 30px;
+  }
+  
+  main.main-section {
+  width: 97%;
+  }
+  
+  .intro-section{
+   margin: 5rem -.2rem 0 0;
+  
+  }
+  
+  .intro-section__name .john-doe {
+  font-weight: bold;
+  font-size: 1.7rem;
+  line-height: 40px;
+  }
+  
+  .intro-section__form .submit {
+  background-color: #6D9BF1;
+  color: #FFFFFF;
+  padding: .5rem;
+  width: 8rem;
+  font-size: 1.2rem;
+  border: 1px solid #6D9BF1;
+  }
+  
+  .intro-section__form input {
+  padding: .5rem;
+  font-size: 1.2rem;
+  width: 20rem;
+  text-align: center;
+  }
+  
+  .create-post {
+    font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  color: #FFFFFF;
+  background-color:  #6D9BF1;
+  border: 1px solid #6D9BF1;
+  padding: .5rem;
+  }
+
+  #createpost
+  {
+    background-color:#6D9BF1;
+    width: 80px;
+    color: #FFFFFF ;
+    text-align: center;
+    width: 10rem;
+   font-size: 1.2rem;
+   line-height: 30px;
+  }
+  
+  @media screen and (max-width: 520px) {
+    .intro-section__form input{
+     margin: 0 2rem 1rem 0;
+    }
+    
+  } 
+  .aside {
+    padding-top: 2.5rem;
+    background: rgba(33, 60, 220, 0.1);
+    /* height: 100%; */
+  }
+  .aside .contrib{
+    margin-top: 1.5rem;
+  }
+  
+  .images img{
+   
+    width: 30%;
+    margin-right: 2%;
+  
+  }
+  .images .last{
+    margin-right: 0;
+  }
+  .marg{
+    margin-top: 2rem;
+  }
+  .aside_content {
+    margin-top: -6rem;
+  }
+  .aside_content .right{
+    text-align: right;
+  }
+  
+  
+ 
+    ​
+  .interactives{
+        font-weight: bold ;
+        font-size: 1rem;
+        color: #000000;
+  }
+    .fa-heart{
+        cursor: pointer;
+        color: black;
+    }
+  
+  #footer {
+    background-color: #6D9BF1; 
+    margin-top: 5rem;  
+    padding-top: 10px;
+    /* height: 300px; */
+    width: 100%;
+  }
+  
+  .links {
+    padding-top: 5px;
+  }
+  
+  .social-links h3,
+  .quick-links li {
+    list-style-type: none;
+    padding-top: 5px;
+  }
+  
+
+  /* Responsive styling */
+  @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 30px;
+      }
+      .aside_content {
+        margin-top: -4rem;
+      }
+      .image{
+        width: 100%;
+        margin-top: 0;
+      }
+      #footer {
+        margin-top: 2rem;
+        padding-top: 10px;
+        width: 100%;
+     }
+  }

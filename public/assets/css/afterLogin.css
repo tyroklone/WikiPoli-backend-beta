@@ -1,0 +1,57 @@
+li .notification{
+      color:red !important;
+    }
+
+    .btn-primary {
+      background-color : #213DCD !important;
+      border-radius: 0px;
+    }
+
+    .sec-nav{
+      margin-top: -10px;
+    }
+
+    span i {
+      font-size: 10px;
+    }
+    .section-title{
+      font-size: 50px;
+    }
+    img.content-image{
+      height:320px;
+    }
+
+    p {
+      text-align: justify;
+      line-height: 3em;
+    }
+    .title{
+      font-size: 25px;
+      font-weight: bold;
+      font-style: normal;
+      line-height: 80px;
+      padding: 10px;
+    }
+
+    .picture{
+      padding: 0px 30px;
+    }
+    .read{
+      color: #213DCD;
+      font-weight: bold;
+    }
+
+    .navbar-fair{
+      background-color: rgba(33, 60, 220, 0.1);
+    }
+
+    .foot-nav-link{
+      color:#000000;
+    }
+
+    .pull-right{
+      float: right;
+    }
+    .text{
+      color:#213DCD;
+    }

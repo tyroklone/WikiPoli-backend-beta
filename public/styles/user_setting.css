@@ -1,0 +1,623 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: #000000;
+}
+
+body {
+	font-family: lato;
+	height: 100vh;
+}
+
+#wrapper {
+	width: 100%;
+}
+
+header {
+	height: 15vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.right {
+	margin-right: 5px;
+}
+
+#headerLogoDiv {
+	height: 100%;
+	width: 30%;
+	margin-top: 20px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+#headerLogo {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+#nav {
+	width: 60%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding-right: 10px;
+}
+
+.navLinks {
+	padding: 0 15px;
+	font-size: 20px;
+	font-weight: 600;
+	font-style: normal; 
+}
+
+#headerButton {
+	padding: 10px 15px;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 550;
+	background-color: #6D9BF1;
+	color: #ffffff;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.alert {
+	color: red;
+}
+
+#target {
+	border-bottom: 3px solid #6D9BF1;
+	margin-top: 2.5px;
+}
+
+#form {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding-right: 10px;
+}
+
+#form input {
+	height: 45px;
+	width: 250px;
+	font-size: 15px;
+	font-weight: normal;
+	font-style: normal;
+	padding-left: 5px;
+	outline: none;
+}
+
+#formButton {
+	background-color: #6D9BF1;
+	color: #ffffff;
+	font-size: 20px;
+	font-weight: 550;
+	font-style: normal;
+	padding: 10px 15px;
+	width: 100px;
+	height: 45px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.logoInBlue {
+	color: blue;
+}
+
+#focus {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 25px;
+	font-size: 32px;
+	font-weight: bold;
+	font-style: normal;
+}
+
+#main {
+	display: flex;
+	justify-content: space-between;
+	align-items:  ;
+	margin: 25px;
+	margin-left: 0;
+	margin-bottom: 0;
+	height: 100%;
+}
+
+#left {
+	padding-top: 20px;
+	text-align: center;
+	background-color: rgba(33,60,220,0.08);
+	border: 1px solid #6D9BF1;
+	width: 25%;
+	height: 1100px;
+	position: relative;
+}
+
+#leftImgDiv {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-bottom:;
+}
+
+#odd {
+	width: 75%;
+}
+
+#img {
+    display: inline;
+    margin: 0 auto;
+    margin-left: -25%;
+    height: 100%;
+    width: auto;
+}
+
+#left p {
+	text-align: center;
+	font-weight: bold;
+	margin-top: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#name {
+	font-size: 20px;
+}
+
+.transparent {
+	font-size: 14px;
+	opacity: 0.7;
+}
+
+#right {
+	display: flex;
+	flex-direction: column;
+	width: 75%;
+	padding: 50px 15px;
+}
+
+#right span {
+}
+
+.accountSettings, .notificationSettings, .viewSettings, .doneButton, .deleteMyAccount {
+	border-radius: 8px;
+	margin-bottom: 20px;
+	margin-left: 30px;
+	padding: 10px;
+	line-height: 30px;
+}
+
+.fa-toggle-on {
+	font-size: 35px;
+	color: #6D9BF1;
+}
+
+.fa-toggle-off {
+	font-size: 35px;
+	color: #6D9BF1;
+	display: none;
+}
+
+.doneButton {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.doneButton button {
+	background-color: #6D9BF1;
+	color: #ffffff;
+	height: 40px;
+	width: 100px;
+	padding: 5px;
+	font-size: 16px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.deleteMyAccount {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	text-align: center;
+}
+
+.deleteMyAccount button {
+	background-color: #6D9BF1;
+	color: #ffffff;
+	height: 45px;
+	width: 150px;
+	padding: 5px;
+	font-size: 16px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+#viewSettingsContent select {
+    background-color: #6D9BF1;
+	color: #ffffff;
+	width: 100px;
+	height: 40px;
+	padding: 5px;
+	font-size: 16px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+#viewSettingsContent button i {
+	margin-left: 10px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.accountSettings h3, .notificationSettings h3, .viewSettings h3 {
+	margin-bottom: 20px;
+}
+
+#accountSettingsContent, #notificationSettingsContent, #viewSettingsContent {
+	border: 1px solid #6D9BF1;
+	border-radius: 8px;
+	margin-left: 5px;
+	padding: 10px;
+}
+
+.edits, .edit {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.edits p {
+	width: 44%;
+	align-self: flex-start;
+}
+
+#different {
+	margin-left: initial;
+}
+
+.edit p {
+	width: 65%;
+}
+
+.edits i, .edit i {
+	margin-left: 5px;
+}
+
+.edits span {
+	width: 45%;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.edit span {
+	display: flex;
+	justify-content: flex-end;
+	width: 20%;
+}
+
+.last {
+	margin-bottom: initial;
+}
+
+.edits button, .edit button {
+	height: 30px;
+	width: 100px;
+	padding: 5px;
+	font-size: 16px;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.rightInnerWrapper {
+	width: 70%;
+}
+
+#footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	left: 0;
+	bottom: 0;
+	height: 100px;
+	width: 100%;
+	background-color: #000000;
+	color:#ffffff;
+
+}
+
+#footer h3 {
+	margin-bottom: 10px;
+}
+
+#footerLogoDiv {
+	height: 100%;
+	width: 30%;
+	display: flex;
+	justify-content: flex-start;
+	margin-left: 15px;
+	align-items: center;
+}
+
+#footerLogo {
+	height: 100px;
+}
+
+#footerLinks {
+	width: 60%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+#footerLinks a {
+	margin-right: 15px;
+	font-size: 18px;
+	font-weight: bold;
+	font-style: normal;
+}
+
+a:hover, button:hover {
+	transform: scale(1.05);
+}
+
+#headerLogo:hover {
+	transform: scale(0.9);
+}
+
+@media screen and (max-width:950px) {
+	#nav {
+		width: 65%;
+	}
+
+}
+
+@media screen and (max-width: 800px) {
+	header {
+		height: 20%;
+	}
+
+	#target {
+		margin-top: inherit;
+	}
+
+    /*change this on remote and create pr*/
+
+    /*change this on remote and create pr*/
+	#focus {
+		padding-left: 10px;
+	}
+
+	#nav{
+		width: 35%;/*change this on remote and create pr*/
+		padding-top: 10px;
+		padding-bottom: 10px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	#formButton {
+		width: 70px;
+		padding-left: 3px;
+		padding-right: 3px;
+		font-size: 16px;
+	}
+
+	.navLinks, #headerButton {
+		margin-bottom: 5px;
+		align-self: flex-end;
+		text-align: right;
+		padding-right: 3px;
+		padding-left: 3px;
+		font-size: 16px;
+	}
+	
+	#main {
+		margin-top:;
+		flex-direction: column;
+	}
+	
+	#left {
+		width: 100%;
+		height: 250px;
+		background-color: inherit;
+		border: none;
+		margin-bottom: ;
+	}
+	
+	#right {
+		width: 100%;
+	}
+	
+	.accountSettings, .notificationSettings, .viewSettings, .doneButton, .deleteMyAccount {
+		width: 100%;
+	}
+
+	.rightOutterWrapper {
+		width: 100%;
+	}
+	
+	.rightInnerWrapper {
+		width: 75%;
+	}
+	
+	#headerLogo {
+		height: 80px;
+	}
+
+	#headerButton {
+		border: none;
+	}
+
+	#focus {
+		font-size: 25px;
+	}
+
+    #form, #focus, #main {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+    }
+
+	.rightOutterWrapper, .accountSettings, .notificationSettings, .viewSettings, .doneButton, .deleteMyAccount {
+		margin-left: 0;
+		margin-right: 0;
+		padding: 15px 10px;
+	}
+
+	.rightOutterWrapper button {
+		width: 60px;
+		font-size: 14px;
+		padding: 2px;
+	}
+
+	#viewSettingsContent select {
+        width: 80px;
+		font-size: 14px;
+		padding: 2px;
+    }
+
+
+}
+
+@media screen and (max-width: 768px) {
+	/*#footer {
+		
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}*/
+
+	#footerLogoDiv {
+		width: 100%;
+		height: 20%;
+		justify-content: center;
+		margin-left: 0;
+		margin-top: 10px;
+	}
+
+	#footerLinks {
+		width: 100%;
+		align-self: center;
+		flex-direction: column;
+		justify-content: center;
+		margin:initial;
+	}
+
+	#formButton, #form input{
+		height: 40px;
+	}
+
+	#footerLinks a {
+		margin-bottom: 5px;
+		margin-top: 5px;
+	}
+
+	#focus {
+		padding-left: 25px;
+	}
+
+	#form {
+	}
+	
+	#leftButton {
+		font-size: 14px;
+	}
+
+	#left p {
+		font-size: 18px;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	#left p {
+		font-size: 13px;
+	}
+
+	#name {
+		font-size: 15px;
+	}
+
+	#viewSettingsContent button {
+		height: 25px;
+		padding: 2px;
+		width: 70px ;
+		font-size: 12px;
+	}
+
+	.edits p {
+		width: 50%;
+		font-size: 14px;
+	}
+
+	.edits span {
+		font-size: 14px;
+		width: 40%;
+	}
+
+	.edit span {
+
+	}
+
+	#header button {
+		height: 35px;
+	}
+
+	#formButton, #form input {
+		height: 35px;
+	}
+
+	.rightInnerWrapper p {
+		width: 85%;
+	}
+
+	.doneButton button{
+		height: 30px ;
+		width: 80px ;
+		padding: 2px;
+		font-size: 13px ;
+
+	}
+
+	.deleteMyAccount button {
+		height: 35px;
+		width: 130px;
+		font-size: 13px ;
+	}
+
+	#left {
+		height: 220px;
+	}
+
+	#right {
+		padding: 25px 15px;
+	}
+
+	#accountSettingsContent, #notificationSettingsContent, #viewSettingsContent {
+	}
+}
+
+

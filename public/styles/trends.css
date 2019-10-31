@@ -1,0 +1,448 @@
+img {
+  width: 100%;
+}
+
+.con {
+  background-color: #6D9BF1;
+}
+
+.fill {
+  width: 60%;;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: auto;
+}
+
+.input-div {
+  width: 60%;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 0.8em;
+  font-size: 1.2rem;
+  border-radius: 10px;
+}
+
+input[type=submit] {
+  width: 100%;
+  padding: 0.8em;
+  font-size: 1.2rem;
+  border-radius: 10px;
+}
+
+.btn-div {
+  width: 25%;
+}
+
+.title-div {
+  width: 60%;
+  margin: auto;
+}
+
+.intro-header {
+  font-size: 36px;
+  text-align: center;
+  padding: 1em;
+  color: black;
+}
+
+.trend-div {
+  width: 50%;
+  margin: auto;
+}
+
+.trend-div p {
+  font-size: 1.2rem;
+}
+
+.trend-links {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  margin: auto;
+}
+
+.box {
+  width:30%;
+  text-align: center;
+}
+
+.box a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.box a:hover {
+  background-color: #000;
+  padding: 1em;
+  border: 1px solid #eee;
+}
+
+.dtrends {
+  width: 80%;;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 2% auto;
+  padding: 1em;
+}
+
+.grid {
+  width: 40%;
+  border: 1px solid #eee;
+  border-radius: 10px;
+}
+
+.grid p {
+  font-style: 1.5rem;
+}
+
+.grid a {
+  text-decoration: none;
+  color: #000;
+}
+
+.more h2 {
+  text-align: center;
+  text-decoration: #000;
+  color: #000;
+}
+
+.owner {
+  padding: 0.5em;
+  font-style: italic;
+}
+
+.posts {
+  width: 80%;
+  margin: auto;
+  padding: 1.5em 0 0.5em 0;
+}
+
+.posts h2 {
+  font-size: 40px;
+}
+
+
+/* Footer */
+#footer{
+  background: #6D9BF1 !important;
+}
+.social-links h3 {
+font-size: 1rem;
+line-height: 1.5;
+}
+
+/* index.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.logo img {
+  width: 120px;
+}
+
+.navbar p {
+  font-size: 2rem;
+  color: #213DCD;
+}
+
+.menu a {
+  font-size: 1.5rem;
+  color: #213DCD;
+}
+
+.menu li {
+  padding-left: 2.5rem;
+}
+
+.fa-bars {
+  color: #000000;
+}
+
+.button-signup {
+  background-color: #213DCD;
+  border: none;
+  box-shadow: none;
+  color: #ffffff;
+  padding: 6px;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 150px;
+  margin-left: 2.5rem;
+}
+
+.button-signup:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.button-search {
+  background-color: #213DCD;
+  border: none;
+  box-shadow: none;
+  color: #ffffff;
+  font-size: 2rem;
+  padding: 1px;
+  width: 150px;
+}
+
+.form-content {
+  width: 80%;
+  margin-top: 15%;
+}
+
+.input-group {
+  width: 80%;
+  margin-left: 23%;
+}
+
+.form-control {
+  height: 50px;
+  padding: 15px;
+  border-radius: 0;
+  border: 1px solid #213DCD;
+}
+
+h1 {
+  margin-left: 23%;
+  color: #213DCD;
+  margin-bottom: 50px;
+}
+
+.search-content {
+  font-size: 1.2rem;
+  margin-left: 23%;
+  color: #676871;
+  padding-top: 20px;
+  font-weight: bold;
+}
+
+.search-content a {
+ font-weight: bold;
+ color: #213DCD;
+}
+
+
+#footer {
+  background-color: #213DCD;
+  margin-top: 5%;  /* YOU CAN PULL THIS OUT WHEN YOU IMPLEMENT YOUR PAGE.*/
+  padding-top: 10px;
+  /* height: 300px; */
+  width: 100%;
+}
+
+.links {
+  padding-top: 5px;
+}
+
+.social-links h3,
+.quick-links li {
+  list-style-type: none;
+  padding-top: 5px;
+}
+
+.social-links h3,
+.quick-links li:first-child {
+  color: #ffffff;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+.quick-links li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.social-links a span {
+  color: #ffffff;
+  letter-spacing: 20px;
+}
+
+.social-links p,
+.copyright p {
+  padding-top: 10px;
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.line{
+  display: none;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 768px) {
+    h1 {
+      font-size: 30px;
+    }
+    #footer {
+      padding-top: 10px;
+      height: 450px;
+      width: 100%;
+   }
+}
+
+@media screen and (max-width: 768px) {
+    .input-group {
+      width: 100%;
+      margin-left: 12%;
+  }
+    .form-control {
+      height: 50px;
+      padding: 20px;
+      border-radius: 0;
+      border: 1px solid #213DCD;
+  }
+    .button-search {
+      background-color: #213DCD;
+      border: none;
+      box-shadow: none;
+      color: #ffffff;
+      font-size: 1.2rem;
+      padding: 1px;
+      width: 80px;
+  }
+    .search-content {
+      font-size: 1rem;
+      width: 100%;
+      margin-left: 13%;
+      color: #676871;
+      padding-top: 20px;
+      font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .input-group {
+    width: 120%;
+    margin-left: 4%;
+  }
+
+  .search-content {
+    font-size: 1rem;
+    width: 120%;
+    margin-left: 8%;
+    color: #676871;
+    padding-top: 20px;
+    font-weight: bold;
+  }
+
+  .line{
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    height: 0px;
+    border: 1px solid #ffffff;
+    width: 25%;
+    background: #000;
+  }
+}
+
+/* header */
+
+.intro-header {
+  margin: auto;
+}
+
+/* media queries */
+
+@media screen and (max-width: 830px) {
+  .title-div {
+    width: 70%;
+  }
+
+  .trend-div {
+    width: 90%;
+  }
+
+  .txt {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 715px) {
+  .title-div {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .title-div {
+    width: 95%;
+  }
+
+  .intro-header {
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 538px) {
+  .dtrends {
+    display: block;
+    margin: auto;
+  }
+
+  .grid {
+    width: 80%;
+    margin: auto;
+  }
+
+  .title-div {
+    width: 100%;
+  }
+
+  .intro-header {
+    font-size: 22px;
+    text-align: center;
+    margin: auto;
+  }
+
+  .txt {
+    font-size: 16px;
+  }
+
+  .title-div {
+    width: 100%;
+  }
+
+  .posts h2 {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 398px) {
+  .title-div {
+    width: 100%;
+  }
+
+  .intro-header {
+    font-size: 27px;
+  }
+
+  .posts h2 {
+    font-size: 25px;
+  }
+
+  .fill {
+    width: 90%;
+  }
+
+  .btn-div {
+    width: 30%;
+  }
+
+  input[type=submit] {
+    font-size: 16px;
+  }
+}
+
+
