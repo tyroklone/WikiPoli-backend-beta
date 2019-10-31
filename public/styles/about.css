@@ -1,0 +1,331 @@
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+body {
+ font-family: 'Lato', sans-serif;
+}
+p, span {
+ flood-color: #000;
+}
+
+p {
+font-size: 18px;
+}
+
+.logo img {
+ width: 90px;
+}
+.nav-link {
+ color: black !important;
+ padding-bottom: 5px;
+}
+.nav-link:hover{
+   background-color: #6D9BF1;
+   color: #fff !important;
+}
+.nav-item.active .nav-link {
+ border-bottom: 3px solid #6D9BF1;
+ padding-bottom: 2px;
+}
+.menu a {
+ color: #213DCD;
+}
+
+.menu li {
+ padding-left: 2.5rem;
+}
+
+.fa-bars {
+ color: #000000;
+}
+.logout {
+ background-color: #6D9BF1;
+ border: none;
+ box-shadow: none;
+ color: #ffffff;
+ padding: 5px 15px;
+ margin-top: .2rem;
+ width: 100px;
+}
+.jumbotron
+{
+ background-color: #6D9BF1;
+ color: #fff;
+ border-radius: 0;
+}
+.jumbotron hr
+{
+ border-top: 2px solid #fff;
+ width: 60%;
+ margin-top: .8rem;
+ margin-bottom: .3rem;
+}
+.jumbotron .lead {
+ font-size: 2.5rem;
+ word-spacing: 1.5rem;
+}
+.jumbotron .small {
+ font-size: 1.9rem;
+}
+hr {
+   margin-inline-start: auto;
+   margin-inline-end: auto;
+}
+.img-fluid.euro {
+   width: 100%;
+   height: auto;
+}
+.btn-primary
+{
+ background: #6D9BF1;
+ border: unset;
+ border-radius: 0;
+ padding: 5px 20px;
+ font-weight: 500;
+ color: #fff;
+}
+.btn-primary:hover
+{
+ background-color: #59ac59;
+ border: 1px solid #59ac59;
+}
+
+.card.Mission {
+ position: relative;
+ font-size: 1.1rem;
+ margin-top: 5%;
+ border-radius: 0;
+ min-height: 10vw;
+}
+
+.card.event {
+ min-height: 26.5vw;
+ padding-top: 5%;
+ line-height: 200%;
+ display: block;
+ align-items: flex-end;
+ background-color: #fff;
+ background-clip: border-box;
+ border: 1px solid rgba(0,0,0,.125);
+ border-radius: unset;
+}
+.lead.text-left {
+ padding: 1rem;
+}
+.aboutimg .col-2
+{
+ position: relative;
+ width: 100%;
+ padding-right: 0;
+ padding-left: 0;
+ flex: 0 0 20%;
+ max-width: 20%;
+ float: left;
+}
+.aboutimg .col-2 img
+{
+ width: 100%;
+ height: 100%;
+}
+#footer {
+ background-color: #213DCD; 
+ margin-top: 5%; 
+ padding-top: 10px;
+ /* height: 300px; */
+ width: 100%;
+}
+
+.links {
+ padding-top: 5px;
+}
+
+.social-links h3,
+.quick-links li {
+ list-style-type: none;
+ padding-top: 5px;
+}
+
+.social-links h3,
+.quick-links li:first-child {
+ color: #ffffff;
+ padding-bottom: 10px;
+ font-weight: bold;
+}
+
+.quick-links li a {
+ color: #ffffff;
+ text-decoration: none;
+}
+
+.social-links a span {
+ color: #ffffff;
+ letter-spacing: 20px;
+}
+
+.social-links p,
+.copyright p {
+ padding-top: 10px;
+ color: #ffffff;
+ font-size: 12px; 
+}
+
+.line{
+ display: none;
+}
+.subFooter {
+ position: relative;
+   background-color: #000000;
+   top: -10px;
+   height: 1.5px;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 992px) {
+   .jumbotron .lead {
+   font-size: 1.7rem;
+   word-spacing: 1rem;
+ }
+ .jumbotron .small {
+   font-size: 1.3rem;
+ }
+ .h2, h2 {
+   font-size: 1.5rem;
+ }
+
+.order-1 {
+ order: 2;
+}
+.order-2 {
+ order: 1;
+}
+.card.Mission {
+   position: relative;
+   font-size: .8rem;
+   margin-top: 0%;
+   min-height: 5vw;
+}
+.card-title {
+   margin-bottom: 0;
+}
+
+p {
+ margin-bottom: .8vh;
+}
+.btn-primary {
+   font-size: .8rem;
+   padding: 5px 12px;
+}
+.display-4 {
+   font-size: 2.5rem;
+}
+.card.event {
+   min-height: 26vw;
+   padding-top: 1%;
+   line-height: 160%;
+ 
+}
+.pb-5, .py-5 {
+   padding-bottom: 2rem!important;
+}
+.lead.text-left {
+   padding-top: 0;
+}
+.lead {
+   font-size: 1.15rem;
+   padding-top: 0;
+}
+@media screen and (max-width: 991px) {
+     .menu li {
+       padding-left: unset;
+   }
+     .nav-link {
+       width: fit-content;
+       padding-right: .3rem !important;
+   }
+ }
+
+}
+
+@media screen and (max-width: 767px) {
+   .jumbotron .lead {
+   font-size: 1.17rem;
+   word-spacing: .8rem;
+ }
+ .jumbotron .small {
+   font-size: 1rem;
+ }
+ .h2, h2 {
+   font-size: 1.3rem;
+   padding: 35px 0 0;
+ }
+  p {
+   font-size: 1rem;
+}
+.card.Mission {
+   position: relative;
+   margin-left: unset;
+}
+
+.btn-primary {
+   font-size: 1rem;
+   padding: 3px 10px;
+}
+.display-4 {
+   font-size: 2rem;
+}
+.card.event {
+   min-height: 22vw;
+   padding-top: 1%;
+   line-height: 160%;
+}
+.pb-5, .py-5 {
+   padding-bottom: 2rem!important;
+}
+.pt-5, .py-5 {
+   padding-top: 2rem!important;
+}
+.lead.text-left {
+   padding-top: 0;
+}
+.lead {
+   font-size: 1rem;
+   padding-top: 0;
+}
+#footer {
+     padding-top: 10px;
+     height: 450px;
+     width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 576px) {
+   .jumbotron .lead {
+   font-size: 1.1rem;
+   word-spacing: .1rem;
+ }
+ .jumbotron .small {
+   font-size: .8rem;
+ }
+ .menu a, .logout {
+   font-size: .8rem;
+}
+
+
+}
+
+@media screen and (max-width: 400px) {
+   .line{
+   display: block;
+   margin: 0 auto;
+   padding: 0;
+   height: 0px;
+   border: 1px solid #ffffff;
+   width: 25%;
+   background: #000;
+ }
+
+
+}

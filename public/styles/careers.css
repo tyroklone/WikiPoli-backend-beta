@@ -1,0 +1,105 @@
+
+.join-team{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 30px;
+    background-color: #6D9BF1;
+    color: white;
+
+}
+.join-team h2{
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 60px;
+    letter-spacing: -0.05em;
+}
+.join-team p{
+    margin-top: 50px;
+
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 34px;
+    text-align: center;
+}
+
+main{
+    margin-top: 30px;
+    width: 100%;
+}
+main .container{
+    
+}
+.join-us{
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 30px;
+}
+.benefits{
+    margin: 50px 0;
+}
+.benefit-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} 
+.benefit-item-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6D9BF1;
+    width: 125px;
+    height: 125px;
+    border-radius: 100%;
+}
+.benefit-item p{
+    margin-top: 15px;
+
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+}
+.jobs{
+    margin: 50px 0;
+}
+.jobs h2{
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+}
+.jobs p{
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+}
+.apply-here{
+    margin-top: 100px;
+}
+hr{
+    width: 80%;
+}
+.no-display{
+    display: none;
+}
+#footer{
+    background: #6D9BF1 !important;
+}
+.social-links h3 {
+font-size: 1rem;
+line-height: 1.5;
+}

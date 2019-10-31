@@ -1,3 +1,4 @@
+
 <?php
 
 /*
@@ -11,6 +12,14 @@
 |
 */
 
+// Route::get('/', function () {
+//     return view('web.index');
+// });
+Route::post('user/register', 'User\UserController@register');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/', function () {
     return view('index');
 });
@@ -18,11 +27,12 @@ Route::get('/post', function () {
     return view('postpage1');
 });
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware' => ['auth']], function () {
-    // Route::get('/user', 'AuthControllers');
-});
+// Route::group(['middleware' => ['auth']], function () {
+//      Route::get('/user', 'AuthControllers');
+// });
+
 

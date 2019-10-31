@@ -1,0 +1,69 @@
+html
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: content-box;
+	--sidebar-width: 18vw;
+}
+
+#admin-main #intro
+{
+	font-weight: 100;
+	text-align: center;
+	color: rgba(0, 0, 0, 0.8);
+}
+#main-options
+{
+	margin: 3rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+	grid-gap: 1rem;
+	height: 70vh;
+}
+#main-options > *
+{
+	background-color: white;/*rgb(113, 113, 200);*/
+	border: 1px solid #6D9BF1; /*rgb(63, 63, 150);*/
+	font-size: 32px;
+	color: #6D9BF1;
+	border-radius: 10px;
+	cursor: pointer;
+	text-align: center;
+	transition: 0.3s ease-out;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+#main-options > *:hover
+{
+	background-color: #6D9BF1; /*rgb(63, 63, 150);*/
+	color: white;
+	text-decoration: none;
+}
+
+
+@media (max-width: 860px)
+{
+    #admin-main #intro
+    {
+    	padding-top: 20px;
+    	padding-bottom: 30px;
+    }
+    #user-div
+    {
+    	margin-top: 0.5rem;
+    }
+    #main-options
+	{
+		margin: 2rem 1rem;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		grid-gap: 1rem;
+		height: 60vh;
+	}
+	#main-options > *
+	{
+		font-size: 20px;
+		padding: 5px;
+		border-radius: 5px;
+	}
+}

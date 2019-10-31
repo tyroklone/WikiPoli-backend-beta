@@ -1,0 +1,298 @@
+html
+{
+	box-sizing: border-box;	
+}
+body
+{
+	font-family: "Lato", segoe UI, sans-serif;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	padding: 0;
+	margin: 0;
+}
+a, a:hover
+{
+	text-decoration: none;
+	color: inherit;
+}
+header #nav-logout
+{
+	font-weight: bolder;
+}
+header .logo img 
+{
+  width: 120px;
+}
+
+header .navbar p 
+{
+  font-size: 2rem;
+  color:  #6D9BF1;
+}
+
+header .menu a 
+{
+  font-size: 1.5rem;
+  color:  #6D9BF1;
+}
+
+header .menu li 
+{
+  padding-left: 2.5rem;
+}
+
+header .fa-bars 
+{
+  color: #000000;
+}
+footer
+{
+    background-color: #6D9BF1;
+    color: white;
+    text-align: center;
+    border-top: 1px solid black;
+    padding: 1rem 3rem;
+}
+footer > #links-container
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+footer .border
+{
+	display: none;
+}
+footer > #links-container > section
+{
+	display: flex;
+	flex-direction: column;
+}
+footer > #links-container > section > *
+{
+	margin: 0.3rem auto;
+}
+footer > #links-container > section > .links-title
+{
+	margin: 1rem auto;
+	font-weight: bolder;
+}
+footer #social-links
+{
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+footer #copyright
+{
+	font-size: 14px;
+}
+.text-center
+{
+	text-align: center;
+}
+#editor-section
+{
+	margin-bottom: 4rem;
+}
+#editor-section #intro
+{
+	color: rgba(0, 0, 0, 0.7);
+}
+#editor-section #editor-wrapper
+{
+	background-color: rgb(200, 200, 200);
+	width: 70%;
+	margin: 2rem auto;
+	padding: 1.5rem 0.5rem 0.5rem;
+	border-radius: 5px;
+}
+#editor-section #post-title
+{
+	margin: 0 auto;
+	width: 100%;
+	padding: 0.5rem;
+	font-family: inherit;
+	font-size: 18px;
+	border-radius: 3px;
+	border: none;
+
+}
+#editor-section #post-body
+{
+	margin: 0 auto;
+	display: block;
+	width: 100%;
+	padding: 0.5rem;
+	font-family: inherit;
+	font-size: 18px;
+	border-radius: 3px;
+	border: none;
+	resize: none;
+	min-height: 40vh;
+}
+#editor-section #editor-header
+{
+	background-color: rgb(245, 245, 245);
+	margin: 0.5rem auto 0.2rem;
+	padding: 0.5rem 1rem;
+	font-family: inherit;
+	font-size: 18px;
+	border-radius: 3px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+#editor-section #editor-header .option-group
+{
+	margin-right: 3rem;
+}
+#editor-section #editor-header .option
+{
+	margin-right: 0.4rem;
+	padding: 0.2rem 0.5rem;
+	cursor: pointer;
+	align-self: center;
+	transition: 0.6s ease-out;
+	position: relative;
+	display: inline-block;
+}
+#editor-section #editor-header .option:hover
+{
+	background-color: #ADCBFB;
+}
+#editor-section #editor-header .active-option
+{
+	text-decoration: underline;
+	background-color: #6D9BF1;
+}
+#editor-section #btns-wrapper
+{
+	display: flex;
+	flex-direction: row;
+	width: 70%;
+	justify-content: flex-end;
+	margin: 1rem auto;
+}
+#editor-section #btns-wrapper button
+{
+	font-size: inherit;
+	font-family: inherit;
+	font-weight: bolder;
+	border-radius: 4px;
+	border: none;
+	outline: none;
+	padding: 0.5rem 1.1rem;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	transition: 0.4s ease-out;
+}
+#editor-section #btns-wrapper button:hover
+{
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.5);
+}
+#editor-section #btns-wrapper #save-draft
+{
+	color: #6D9BF1;
+	background-color: white;
+	border: 1px solid #6D9BF1;
+	margin: 0 2rem;
+}
+#editor-section #btns-wrapper #create-post
+{
+	color: white;
+	background-color: #6D9BF1;
+	border: 1px solid #6D9BF1;
+}
+
+
+@media (max-width: 860px)
+{
+	header .menu
+	{
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		padding-bottom: 1rem;
+	}
+	header .menu a 
+	{
+	  font-size: 1rem;
+	}
+	#editor-section #intro
+	{
+		margin: 1rem auto;
+		font-size: 27px;
+	}
+	#editor-section #editor-wrapper
+	{
+		width: 90%;
+		padding: 1.5rem 0.5rem 0.5rem;
+	}
+	#editor-section #editor-header
+	{
+		margin: 0.5rem auto 0.2rem;
+	}
+	#editor-section #editor-header .option-group
+	{
+		margin-right: 0.5rem;
+	}
+	#editor-section #post-body, #editor-section #post-title, #editor-section #editor-header
+	{
+		font-size: 16px;
+	}
+	#editor-section #editor-header
+	{
+		padding: 0.2rem 0.5rem;
+		font-family: inherit;
+		font-size: 18px;
+		border-radius: 3px;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	#editor-section #btns-wrapper
+	{
+		width: 100%;
+		justify-content: space-around;
+		padding: 0 2rem 1rem;
+	}
+	#editor-section #btns-wrapper button
+	{
+		padding: 0.3rem 0.8rem;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		transition: 0.4s ease-out;
+	}
+	#editor-section #btns-wrapper #save-draft
+	{
+		margin: 0;
+	}
+	footer > #links-container
+	{
+		flex-direction: column;
+		justify-content: space-around;
+	}
+	footer .border
+	{
+		display: block;
+		width: 40%;
+		border: 1px solid yellow;
+		margin: 0.5rem auto;
+	}
+	footer > #links-container > section > *
+	{
+		margin: 0.2rem auto;
+	}
+	footer #social-links
+	{
+		width: 50%;
+	}
+	footer #copyright
+	{
+		margin: 1rem auto;
+		font-size: 12px;
+	}
+	footer #email-contact
+	{
+		font-size: 13px;
+	}
+}
