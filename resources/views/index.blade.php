@@ -236,7 +236,7 @@ h1 {
     <div class="container">
       <nav class="navbar navbar-expand-lg">
 
-        <a href="index.html" class="navbar-brand logo">
+        <a href="{{ url('/') }}" class="navbar-brand logo">
 
           <img src="https://res.cloudinary.com/fabianuzukwu/image/upload/v1571749198/c09e9odiqy2cvkosfubl.png" alt="WikiPoli Logo">
         </a>
@@ -278,7 +278,7 @@ h1 {
               </div>
             </form>
               <div class="col-lg-12">
-                <p class="search-content">Search for Candidates in your election, get to know them. Contribute posts and add to existing posts.<a href="signin.html"> Get Started</a>
+                <p class="search-content">Search for Candidates in your election, get to know them. Contribute posts and add to existing posts.<a href="{{ route('register') }}"> Get Started</a>
                 </p>
               </div>
           </div>
