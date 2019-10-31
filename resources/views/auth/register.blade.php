@@ -1,4 +1,8 @@
-@extends('layouts.login')
+
+@section('title')
+<title>WikiPoli | Register</title>
+@endsection
+@extends('layouts.register')
 
 @section('content')
 <main class="row register_container d-flex justify-content-center">
