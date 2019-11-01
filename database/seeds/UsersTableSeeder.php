@@ -29,11 +29,24 @@ class UsersTableSeeder extends Seeder {
         $user->description = 'Am a Software Dev';
         $user->location = 'Enugu';
         $user->status_id = 1;
-        $user->email = "admin@naijacrawl.com";
+        $user->email = "admin@wiki.com";
         $user->email_verified_at = Carbon::now();
         $user->password = bcrypt('secret');
         $user->save();
         $user->assignRole($role);
+        $role2 = Role::whereName('Admin')->first();
+        $user2 = new User();
+        $user2->full_name = 'Adike Kizito';
+        $user2->description = 'Am a Software Dev';
+        $user2->location = 'Enugu';
+        $user2->status_id = 1;
+        $user2->email = "admin@wiki2.com";
+        $user2->email_verified_at = Carbon::now();
+        $user2->password = bcrypt('secret');
+        $user2->save();
+        $user2->assignRole($role2);
+        
+        
     }
 
 }

@@ -7,17 +7,34 @@
 <div class="container main">
     
 		<div class="row">
+			{{-- Function to shorten the texts --}}
+			<?php
+				function textShorten($text, $limit = 400){
+					$text = $text. " ";
+					$text = substr($text, 0, $limit);
+					$text = substr($text, 0, strrpos($text, ' '));
+					$text = $text."...";
+					return $text;
+				}
+			?>
                  @forelse($posts as $post)
-			<div class="col-sm " id="post-1">
-                             
+			<div class="col-sm col-md-5" id="post-1">
+                            
 				<div class="post">
-						<h4>{{$post->user->full_name}}</h4>
-						{!! $post->body !!}
-					<div class="icon">
-						<a href="" class="" aria-hideen="true"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571760606/zbjtlwqjffgwvyc9klvc.png" style="width: 25px;"></a>
-						<a href=""><img src="https://res.cloudinary.com/siyfa/image/upload/v1571761066/a4zha34vheoeyzypvpqu.png" style="width: 25px;"></a>
-		                <a href=""><img src="https://res.cloudinary.com/siyfa/image/upload/v1571761008/bzosk4pcqvpldu59bo0w.png" style="width: 25px;"></i></a>
-		                <a href="" aria-hideen="true"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571760662/hq5ctfvhjv3r05bqdski.png" style="width: 25px;"></a>
+
+						<h4>{{ $post->title }}</h4>
+						<p>
+							{!! textShorten($post->body) !!}
+						</p>
+						<a href="/post/{{ $post->id }}" class="btn btn-info">Read More</a>
+					<div class="icon mt-4">
+						<!--<a href="" class="" aria-hideen="true"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571760606/zbjtlwqjffgwvyc9klvc.png" style="width: 25px;"></a>-->
+						<!-- twitter -->
+						<a href="http://www.twitter.com/intent/tweet?url={{ URL::current() }}&text={{ $post->title }}" target="_blank"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571761066/a4zha34vheoeyzypvpqu.png" style="width: 25px;"></a>
+						<!-- facebook -->
+						<a href="https://www.facebook.com/sharer/sharer.php?u={{ URL::current() }}" target="_blank"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571761008/bzosk4pcqvpldu59bo0w.png" style="width: 25px;"></i></a>
+						<a href="" aria-hideen="true"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571760662/hq5ctfvhjv3r05bqdski.png" style="width: 25px;"></a>
+
 					</div>
 				</div>	
         
@@ -27,25 +44,8 @@
 	               @empty
      
      no post
-     @endforelse
+	 @endforelse
 		</div>
-   	
+		{{$posts->links()}} 
 	</div>
-	
-	{{--
-	<div class="pagination">
-		<ul class="pages">
-			<li><img src="https://res.cloudinary.com/siyfa/image/upload/v1571762484/cezdbfynpv1dvjfopzy0.png" style="width: 10px; color: #333333;"></li>
-			<li class="pageitem">
-				<a href="post page 1.html" class="pagelink" style="color: #0000FF; font-size: 1.3em;">1</a>
-			</li>
-			<li class="pageitem">
-				<a href="post page 2.html" class="pagelink" style="color: #333333; font-size: 1.2em;">2</a>
-			<li class="pageitem">
-				<a href="post page 3.html" class="pagelink" style="color: #333333; font-size: 1.2em;">3</a>
-			</li>
-			<li><img src="https://res.cloudinary.com/siyfa/image/upload/v1571762485/sk98ivrsx2v2ypqgrguh.png" style="width: 10px; color: #333333;"> </li>
-		</ul>
-	</div>
-	--}}
 @endsection
