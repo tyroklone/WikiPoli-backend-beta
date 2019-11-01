@@ -21,6 +21,8 @@ class PermissionTableSeeder extends Seeder {
             'user-create',
             'user-edit',
             'user-delete',
+            'user-privilege-add',
+            'user-privilege-remove',
             'post-create',
             'post-list',
             'post-edit',

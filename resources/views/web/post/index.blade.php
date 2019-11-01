@@ -8,11 +8,11 @@
     
 		<div class="row">
                  @forelse($posts as $post)
-			<div class="col-sm " id="post-1">
+			<div class="col-sm col-md-5" id="post-1">
                             
 				<div class="post">
 						<h4>{{$post->user->full_name}}</h4>
-						{!! $post->body !!}
+						{!! $post->body !!}  <a href="">Read More</a>
 					<div class="icon">
 						<a href="" class="" aria-hideen="true"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571760606/zbjtlwqjffgwvyc9klvc.png" style="width: 25px;"></a>
 						<a href=""><img src="https://res.cloudinary.com/siyfa/image/upload/v1571761066/a4zha34vheoeyzypvpqu.png" style="width: 25px;"></a>
