@@ -32,7 +32,7 @@ route::get('/posts/pending-posts','PostsController@pendingPosts');
 Route::put('/faq', 'FaqController@store');
 
 // Route to display all faqs in the database
-Route::delete('/faq/all', 'FaqController@index');
+Route::get('/faq/all', 'FaqController@index');
 
 // Route to edit faqs
 Route::put('/faq/edit/{id}', 'FaqController@update');
