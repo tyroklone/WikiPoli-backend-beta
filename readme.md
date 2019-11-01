@@ -17,8 +17,8 @@ WikiPoli is a ...
 
 ## For fresh migrations and update
 
-<h6>Run the below commands</h6>
-- composer update
-- php artisan migrate:fresh --seed
-- php artisan passport:install
-- php artisan serve
+<h6>Run the below commands</h6> <br>
+- composer update <br>
+- php artisan migrate:fresh --seed <br>
+- php artisan passport:install <br>
+- php artisan serve <br>
