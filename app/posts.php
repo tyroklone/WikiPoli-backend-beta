@@ -13,7 +13,7 @@ class Posts extends Model
 
     public $primaryKey = 'id';
 
-    protected $fillable = ['user', 'comment', 'post_id'];
+    protected $fillable = ['user', 'comment', 'posts_id'];
     
     public function comments()
     {
