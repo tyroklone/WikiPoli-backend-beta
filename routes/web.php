@@ -36,9 +36,24 @@ Route::get('/Donation', function () {
 
 Route::get('/posts', 'Web\WebController@index');
 
+// Route::get('/post', 'PostsController@index');
+Route::get('/post/{id}', 'PostsController@show')->name('post.show');
+Route::post('/comments/{id}', 'CommentsController@store');
+
+
+// Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
+
+// Route::group(['middleware' => ['auth']], function () {
+//      Route::get('/user', 'AuthControllers');
+// });
+
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home1', 'HomeController@index')->name('home');
+Route::get('/home', 'Web\WebController@index');
 Route::get('/create-post', 'Post\PostController@index');
 Route::post('/create-post', 'Post\PostController@create');
 Route::post('/save-draft', 'Post\PostController@draft');

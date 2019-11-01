@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
     <div class="container">
-        <a href="index.html" class="logo"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571745363/u0zhq4fwslfr4u5lx5qt.png" alt="logo" class="img-fluid" width="150px;"></a>
+        <a href="/" class="logo"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571745363/u0zhq4fwslfr4u5lx5qt.png" alt="logo" class="img-fluid" width="150px;"></a>
         <button class="navbar-toggler float-right custom-toggler" type="button" data-toggle="collapse" data-target="#navbar9" style="color: #000000;">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -9,6 +9,16 @@
                  @Auth
                   <li class="navbar-item mr-5">
                     <a href="{{url('home')}}" class="navbar-link" style="color: black;" id="logIn">{{Auth::user()->full_name}}</a>
+                </li>
+                <li>
+                    <a href="{{ route('logout') }}" id="btn" class="btn btn-sm btn-primary"
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
                 </li>
                
                  @else
