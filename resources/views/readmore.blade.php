@@ -129,7 +129,7 @@
                       <div class="row">
                         <div class="col-md-2">
                           <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
-                          <p class="text-secondary text-center">{{ $comment->created_at }}</p>
+                          <p class="text-secondary text-center">{{ $comment->created_at->diffForHumans() }}</p>
                         </div>
                         <div class="col-md-10">
                           <p>
