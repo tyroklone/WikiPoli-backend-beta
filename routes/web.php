@@ -38,7 +38,8 @@ Route::get('/Donation', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home1', 'HomeController@index')->name('home');
+Route::get('/home', 'Web\WebController@index');
 Route::get('/create-post', 'Post\PostController@index');
 Route::post('/create-post', 'Post\PostController@create');
 Route::post('/save-draft', 'Post\PostController@draft');

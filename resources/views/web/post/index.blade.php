@@ -9,7 +9,7 @@
 		<div class="row">
                  @forelse($posts as $post)
 			<div class="col-sm " id="post-1">
-                            
+                             
 				<div class="post">
 						<h4>{{$post->user->full_name}}</h4>
 						{!! $post->body !!}

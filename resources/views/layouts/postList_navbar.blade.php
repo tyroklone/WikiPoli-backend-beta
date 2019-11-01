@@ -10,6 +10,12 @@
                   <li class="navbar-item mr-5">
                     <a href="{{url('home')}}" class="navbar-link" style="color: black;" id="logIn">{{Auth::user()->full_name}}</a>
                 </li>
+                <li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline-block;">
+                        @csrf
+                            <button type="submit" id="btn" class="btn btn-sm btn-primary">LogOut</button>
+                    </form>
+                </li>
                
                  @else
                 <li class="navbar-item mr-5">
