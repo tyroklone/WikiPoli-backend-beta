@@ -36,13 +36,27 @@ $(".deleted").on("submit", function () {
         <script>
             let selectStatus = document.querySelector('#select-filter');
             selectStatus.addEventListener('change', function () {
-                // this.form.action = "/projects?status="+selectStatus.value;
-                // this.form.submit();
-                if (selectStatus.value == 'all')
+              
+                if (selectStatus.value === 'all')
                     window.location.href = "/admin/posts";
                 else
                     window.location.href = "/admin/posts?filter=" + selectStatus.value;
             }, false);
+           
+
+        </script>
+        
+         <script>
+          
+            let selectStatusUser = document.querySelector('#select-filter-user');
+            selectStatusUser.addEventListener('change', function () {
+             
+                if (selectStatusUser.value === 'all')
+                    window.location.href = "/admin/users";
+                else
+                    window.location.href = "/admin/users?filter=" + selectStatusUser.value;
+            }, false);
+
         </script>
     </body>
 </html>

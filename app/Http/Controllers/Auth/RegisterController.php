@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Spatie\Permission\Models\Role;
 
 class RegisterController extends Controller {
     /*
@@ -45,7 +46,7 @@ use RegistersUsers;
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data) {
-        
+
         return Validator::make($data, [
                     'full_name' => ['required', 'string', 'max:255'],
                     'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -53,7 +54,6 @@ use RegistersUsers;
                     'location' => ['required'],
                     'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
-   
     }
 
     /**
@@ -63,8 +63,8 @@ use RegistersUsers;
      * @return \App\User
      */
     protected function create(array $data) {
-
-        return User::create([
+        $role = Role::whereName('Users')->first();
+        $user = User::create([
                     'full_name' => $data['full_name'],
                     'email' => $data['email'],
                     'description' => $data['description'],
@@ -72,6 +72,8 @@ use RegistersUsers;
                     'password' => Hash::make($data['password']),
                     'status_id' => 1
         ]);
+        $user->assignRole($role);
+        return $user;
     }
 
 }

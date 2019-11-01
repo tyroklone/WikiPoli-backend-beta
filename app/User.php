@@ -7,13 +7,15 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
+use App\UserStatus;
 
 class User extends Authenticatable {
 
     use HasApiTokens,
         Notifiable,
-        HasRoles;
+        HasRoles,
+        SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -21,7 +23,7 @@ class User extends Authenticatable {
      * @var array
      */
     protected $fillable = [
-        'full_name', 'status_id','username','description','location', 'email', 'password',
+        'full_name', 'status_id', 'username', 'description', 'location', 'email', 'password',
     ];
 
     /**
@@ -41,5 +43,9 @@ class User extends Authenticatable {
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    
+
+    public function user_statuses() {
+        return $this->belongsTo(UserStatus::class, 'status_id');
+    }
+
 }

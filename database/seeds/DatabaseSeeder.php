@@ -11,11 +11,11 @@ class DatabaseSeeder extends Seeder {
      */
     public function run() {
         DB::table('user_statuses')->insert([
-            ['status_name' => 'active',
+            ['status' => 'active',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
-            ['status_name' => 'blocked',
+            ['status' => 'blocked',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ]

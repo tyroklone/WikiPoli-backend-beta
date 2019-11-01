@@ -16,6 +16,48 @@ class AdminController extends Controller {
         return view('admin.home', $data);
     }
 
+    // Method to show all pending posts
+    public function pendingPosts()
+    {
+     try {
+         $pending = [];
+         $posts = Posts::all();
+         foreach($posts as $post)
+         {
+          if($post->status == 0)
+          {
+           array_push($pending, $post);
+          }
+         }
+  
+         if(empty($pending))
+         {
+          $res['status'] = false;
+          $res['status_code'] = 404;
+          $res['message'] = "No Pending Posts Found!";
+   
+          return response()->json($res, $res['status_code']);
+         }
+          else
+         {
+          $res['status'] = true;
+          $res['status_code'] = 200;
+          $res['message'] = "Pending Posts Found!";
+          $res['pending_posts'] = $pending;
+   
+          return response()->json($res, $res['status_code']);
+         }
+        }
+         catch (\Exception $e)
+        {
+         $res['status_code'] = 501;
+         $res['message'] = 'An Unexpected Error Occured!';
+         $res['error'] = $e->getMessage();
+          
+         return response()->json($res, $res['status_code']);
+        }
+    }
+    
     public function postGet() {
         $filter = Request()->filter;
         if ($filter == 'approved') {
@@ -77,6 +119,22 @@ class AdminController extends Controller {
         session()->flash('message.alert', 'success');
         session()->flash('message.content', "Post Restore");
         return back();
+    }
+
+    //users
+    public function userGet() {
+        $filter = Request()->filter;
+        if ($filter == 'blocked') {
+            $data['users'] = User::with(["user_statuses" => function($q) {
+                            $q->where('user_statuses.status', '=', 'blocked');
+                        }])->orderBy('created_at', 'DESC')->with('user_statuses')->paginate(15);
+        } elseif ($filter == 'soft') {
+            $data['users'] = User::onlyTrashed()->with('user_statuses')->orderBy('created_at', 'desc')->paginate(15);
+        } else {
+            $data['users'] = User::with('user_statuses')->orderBy('created_at', 'desc')->paginate(15);
+        }
+
+        return view('admin.user.index', $data);
     }
 
 }
