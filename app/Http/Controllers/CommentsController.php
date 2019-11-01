@@ -48,9 +48,18 @@ class CommentsController extends Controller
 
         $comment->save();
         
-        //Session::flash('success', 'Comment Added Successfully!');
-
-        return redirect()->back();
+        if ($comment->save()) {
+            $notification = array(
+                'message'    => 'Comment Added Successfully!',
+                'alert-type' => 'success'
+            );
+        } else {
+            $notification = array(
+                'message'    => 'Comment Not Added, Please Try Again!',
+                'alert-type' => 'error'
+            );
+        }
+        return redirect()->back()->with($notification);
     }
 
     /**

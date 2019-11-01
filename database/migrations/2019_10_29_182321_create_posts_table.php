@@ -4,22 +4,25 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePostsTable extends Migration
-{
+class CreatePostsTable extends Migration {
+
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title', 45);
-            $table->longtext('body', 45);
-            $table->integer('author_id')->unsigned();
-            $table->integer('post_id')->unsigned();
+            $table->text('title', 255);
+            $table->longtext('slug');
+            $table->longtext('body');
+            $table->unsignedBigInteger('author_id');
+            $table->boolean('status')->default(0);
             $table->timestamps();
+            $table->softDeletes();
+            $table->foreign('author_id')
+                    ->references('id')->on('users')->onUpdate('cascade');
         });
     }
 
@@ -28,8 +31,8 @@ class CreatePostsTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists('posts');
     }
+
 }

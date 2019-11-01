@@ -12,6 +12,183 @@
     <link rel="stylesheet" href="{{ asset('css/styles/careers.css') }}"/>
     <link rel="icon" type="img/png" href="images/favicon.png">
     <title>Careers </title>
+    <style>
+
+footer {
+    background: rgba(33, 60, 220, 0.1);
+}
+
+
+
+.footer-list li  a {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+.footer-list li{
+   margin: 15px;
+    
+}
+
+.footer-list {
+    list-style: none;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    height: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    right: 5%;
+    
+}
+
+.footer_brand img{
+    height: 15vh;
+}
+
+
+
+/* media queries */
+@media screen and (max-width: 768px){
+    .footer-list li {
+        font-weight:  bold;
+        font-size: 13px;       
+    }
+    
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    footer {
+        height: 200px;
+    }
+
+    .footer-list{
+        display: flex;
+        flex-direction: column;
+        right: 25%;
+        transform: translate(-20%, 0%);
+        height: auto;
+        text-align: center;       
+    }
+
+    .footer-nav{
+        width: 100%;
+        
+    }
+
+    .footer-list li{
+        margin: 10px 0px;
+         
+     }
+}
+
+        .join-team{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 30px;
+    background-color: #6D9BF1;
+    color: white;
+
+}
+.join-team h2{
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 60px;
+    letter-spacing: -0.05em;
+}
+.join-team p{
+    margin-top: 50px;
+
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 34px;
+    text-align: center;
+}
+
+main{
+    margin-top: 30px;
+    width: 100%;
+}
+main .container{
+    
+}
+.join-us{
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 30px;
+}
+.benefits{
+    margin: 50px 0;
+}
+.benefit-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} 
+.benefit-item-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6D9BF1;
+    width: 125px;
+    height: 125px;
+    border-radius: 100%;
+}
+.benefit-item p{
+    margin-top: 15px;
+
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+}
+.jobs{
+    margin: 50px 0;
+}
+.jobs h2{
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+}
+.jobs p{
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+}
+.apply-here{
+    margin-top: 100px;
+}
+hr{
+    width: 80%;
+}
+.no-display{
+    display: none;
+}
+#footer{
+    background: #6D9BF1 !important;
+}
+.social-links h3 {
+font-size: 1rem;
+line-height: 1.5;
+}
+    </style>
 </head>
 
 <body>
@@ -151,42 +328,42 @@
         </div>
     </main>
     <footer>
-        <div id="footer">
-            <div class="container">
-                <div class="row links">
-                    <div class="col-md-4 col-sm-12  text-center">
-                        <ul class="quick-links">
-                            <li>Legal</li>
-                            <li><a href="Terms-of-use.html">Terms of Use</a></li>
-                            <li><a href="privacypolicy.html">Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4 col-sm-12  text-center">
-                        <ul class="quick-links">
-                            <li>Company</li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="contact.html">Careers</a></li>
-                            <li><a href="FAQ.html">FAQs</a></li>
-                            <li><a href="donation_page.html">Donations</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-4 col-sm-12  text-center">
-                        <div class="text-center social-links">
-                            <h3>Connect With Us</h3>
-                            <a href="facebook.com"><span class="fa fa-facebook"></span></a>
-                            <a href="twitter.com"><span class="fa fa-twitter"></span></a>
-                            <a href="instagram.com"><span class="fa fa-instagram"></span></a>
-                            <p>contact@wikipoli.gq</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 copyright text-center">
-                        <p>&copy; 2019 Wikipoli - All Rights Reserved</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+			<div id="footer">
+				<div class="container">
+					<div class="row links">
+						<div class="col-md-4 col-sm-12  text-center">
+							<ul class="quick-links">
+								<li>Legal</li>
+								<li><a href="{{ url('/Terms') }}">Terms of Use</a></li>
+								<li><a href="{{ url('/PrivacyPolicy') }}">Privacy Policy</a></li>
+							</ul>
+						</div>
+						<div class="col-md-4 col-sm-12  text-center">
+							<ul class="quick-links">
+								<li>Company</li>
+								<li><a href="{{ url('/About') }}">About</a></li>
+								<li><a href="{{ url('/Careers') }}">Careers</a></li>
+								<li><a href="{{ url('/FAQs') }}">FAQs</a></li>
+								<li><a href="{{ url('/Donation') }}">Donations</a></li>
+							</ul>
+						</div>
+	
+						<div class="col-md-4 col-sm-12  text-center">
+							<div class="text-center social-links">
+								<h3>Connect With Us</h3>
+								<a href="facebook.com"><span class="fa fa-facebook"></span></a>
+								<a href="twitter.com"><span class="fa fa-twitter"></span></a>
+								<a href="instagram.com"><span class="fa fa-instagram"></span></a>
+								<p>contact@wikipoli.gq</p>
+							</div>
+						</div>
+						<div class="col-lg-12 copyright text-center">
+							<p>&copy; 2019 Wikipoli - All Rights Reserved</p>
+						</div>
+					</div>
+				</div> 
+			</div>
+		</footer>
 
 </body>
 

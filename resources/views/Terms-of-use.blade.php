@@ -11,6 +11,238 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,700|Open+Sans:400,700&display=swap">
     <link rel="stylesheet" href="{{ asset('css/styles/Terms-of-use.css') }}"/>
+    <style>
+        /* Style for Navbar Starts */
+.navbar-custom li a {
+    color: #000;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.custom-toggler.navbar-toggler {
+    border-color: #000;
+}
+/* Style for Navbar Ends */
+.display-4 {
+font-weight: bold;
+font-size: 40px;
+line-height: 55px;
+}
+h1 {
+font-family: "Nunito", sans-serif;
+font-style: normal;
+letter-spacing: 0.655606px;
+color: #ffffff;
+text-align: center;
+}
+
+h5 {
+font-family: "Nunito", sans-serif;
+}
+strong {
+font-size: 1.15rem;
+}
+p {
+font-family: "Nunito", sans-serif;
+font-size: .7em;
+}
+.paragraph {
+font-family: "Open Sans", sans-serif;
+font-size: 16px;
+line-height: 22px;
+color: black;
+}
+.navbar {
+padding: .9rem 1rem;
+}
+.navbar-nav {
+margin-left: 18rem;
+}
+.nav-item {
+margin: 0 15px;
+font-family: "Nunito", sans-serif;
+font-style: normal;
+font-weight: bold;
+}
+.nav-link {
+font-size: 16px;
+line-height: 22px;
+letter-spacing: 0.655606px;
+color: #2a2b2a !important;
+}
+#learn {
+color: white !important
+}
+
+.secondheader {
+font-family: "Nunito", sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 27px;
+letter-spacing: 0.655606px;
+color: #6D9BF1;
+}
+.first {
+background: #2a2b2a;
+}
+.second {
+border: 0.5px solid #d0d0d0;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+padding: 20px 80px;
+}
+
+.fourth {
+background: #3a0842;
+padding: 2.2em;
+}
+.fourth a {
+color: white;
+}
+.fifth {
+background: #2e0435;
+text-align: end;
+}
+.center {
+text-align: center;
+}
+.lead {
+font-family: "Nunito", sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 25px;
+line-height: 34px;
+}
+.sub-lead {
+font-family: "Open Sans", sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 22px;
+}
+
+.jumbotron {
+margin-bottom: 0;
+}
+
+li {
+list-style: none;
+color: white;
+}
+.expand {
+width: 91%
+}
+#footer{
+background: #6D9BF1 !important;
+}
+.social-links h3 {
+font-size: 1rem;
+line-height: 1.5;
+}
+/* Style for footer */
+.logo img {
+width: 120px;
+}
+
+#footer {
+background-color:  #6D9BF1; 
+padding-top: 10px;
+/* height: 300px; */
+width: 100%;
+}
+.fa-bars {
+color: #000000;
+}
+
+.links {
+padding-top: 5px;
+}
+
+.social-links h3,
+.quick-links li {
+list-style-type: none;
+padding-top: 5px;
+}
+
+.social-links h3,
+.quick-links li:first-child {
+color: #ffffff;
+padding-bottom: 10px;
+font-weight: bold;
+}
+
+.quick-links li a {
+color: #ffffff;
+text-decoration: none;
+}
+
+.social-links a span {
+color: #ffffff;
+letter-spacing: 20px;
+}
+
+.social-links p,
+.copyright p {
+padding-top: 10px;
+color: #ffffff;
+font-size: 12px; 
+}
+
+.line{
+display: none;
+}
+
+@media only screen and (max-width: 480px) {
+.display-4 {
+font-size: 35px;
+}
+h3 {
+margin-bottom: 1rem;
+}
+.my-5 {
+margin-top: 1rem !important;
+}
+.second {
+padding: 20px 50px;
+}
+#buttons button {
+margin-right: 0;
+margin-left: 0;
+margin-bottom: 10px;
+}
+}
+::-webkit-scrollbar {
+width: 5px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+box-shadow: inset 0 0 5px grey;
+border-radius: 10px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #6D9BF1; 
+border-radius: 10px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #6D9BF1; 
+}
+/*Responsive styling */
+@media screen and (max-width: 768px) {
+h1 {
+font-size: 30px;
+}
+#footer {
+padding-top: 10px;
+height: 450px;
+width: 100%;
+}
+}
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
@@ -80,44 +312,43 @@
             </p>
         </div>
     </div>
-    <footer >
-        <div id="footer">
-            <div class="container">
-                <div class="row links">
-                    <div class="col-md-4 col-sm-12  text-center">
-                        <ul class="quick-links">
-                            <li>Legal</li>
-                            <li><a href="Terms-of-use.html">Terms of Use</a></li>
-                            <li><a href="privacypolicy.html">Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                    <span class="line"></span>
-                    <div class="col-md-4 col-sm-12  text-center">    
-                        <ul class="quick-links">
-                            <li>Company</li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="careers.html">Careers</a></li>
-                            <li><a href="FAQ.html">FAQs</a></li>
-                            <li><a href="donation_page.html">Donations</a></li>
-                        </ul>
-                    </div>
-                    <span class="line"></span>
-                    <div class="col-md-4 col-sm-12  text-center">
-                        <div class="text-center social-links">
-                            <h3>Connect With Us</h3>
-                            <a href="facebook.com"><span class="fa fa-facebook pl-4"></span></a>
-                            <a href="twitter.com"><span class="fa fa-twitter"></span></a>
-                            <a href="instagram.com"><span class="fa fa-instagram"></span></a>
-                            <p>contact@wikipoli.gq</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 copyright text-center">
-                        <p>&copy; 2019 Wikipoli - All Rights Reserved</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <footer>
+			<div id="footer">
+				<div class="container">
+					<div class="row links">
+						<div class="col-md-4 col-sm-12  text-center">
+							<ul class="quick-links">
+								<li>Legal</li>
+								<li><a href="{{ url('/Terms') }}">Terms of Use</a></li>
+								<li><a href="{{ url('/PrivacyPolicy') }}">Privacy Policy</a></li>
+							</ul>
+						</div>
+						<div class="col-md-4 col-sm-12  text-center">
+							<ul class="quick-links">
+								<li>Company</li>
+								<li><a href="{{ url('/About') }}">About</a></li>
+								<li><a href="{{ url('/Careers') }}">Careers</a></li>
+								<li><a href="{{ url('/FAQs') }}">FAQs</a></li>
+								<li><a href="{{ url('/Donation') }}">Donations</a></li>
+							</ul>
+						</div>
+	
+						<div class="col-md-4 col-sm-12  text-center">
+							<div class="text-center social-links">
+								<h3>Connect With Us</h3>
+								<a href="facebook.com"><span class="fa fa-facebook"></span></a>
+								<a href="twitter.com"><span class="fa fa-twitter"></span></a>
+								<a href="instagram.com"><span class="fa fa-instagram"></span></a>
+								<p>contact@wikipoli.gq</p>
+							</div>
+						</div>
+						<div class="col-lg-12 copyright text-center">
+							<p>&copy; 2019 Wikipoli - All Rights Reserved</p>
+						</div>
+					</div>
+				</div> 
+			</div>
+		</footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>

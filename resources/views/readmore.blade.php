@@ -49,7 +49,7 @@
     <div class="row">
       <div class="col-md-6">
         <span id="logo">
-          <a href="/post"><img src="https://res.cloudinary.com/fabianuzukwu/image/upload/v1571749198/c09e9odiqy2cvkosfubl.png" alt="wikipoli-site-logo" width="100"/></a>
+          <a href="/posts"><img src="https://res.cloudinary.com/fabianuzukwu/image/upload/v1571749198/c09e9odiqy2cvkosfubl.png" alt="wikipoli-site-logo" width="100"/></a>
         </span>
       </div>
       {{-- Check if user is logged in --}}
@@ -68,12 +68,7 @@
             </form>
           </li>
           <li>
-            <a href=""><i class="fa fa-user"></i>&nbsp;{{ Auth::user()->username }}</a>
-          </li>
-          <li>
-            <a href="">Settings</a></li>
-          <li>
-            <a href="" style="color: red;"><span>3</span><i class="fa fa-bell-o"></i></a>
+            <a href="{{url('home')}}"><i class="fa fa-user"></i>&nbsp;{{ Auth::user()->full_name }}</a>
           </li>
         </ul>
       </div>
@@ -92,7 +87,6 @@
     </div>
     @else 
     <div class="col-md-7">
-        <a href="{{ route('login') }}" id="btn" class="btn btn-sm btn-primary">Login</a>
     </div>
     <div class="col-md-5">
       <div class="input-group mb-3" style="text-align-last: inherit;">
@@ -109,45 +103,60 @@
       <div class="col-md-12" id="content">
         <!-- post content here -->
         <div class="post">
-          <h1>{{ $post->title }}</h1>
-          <p style="text-align: justify; display: block;">
-            {{ $post->body }}
-          </p>
-          {{-- <div class="icons">
-              <!-- twitter share link -->
-              <a href='http://www.twitter.com/intent/tweet?url={{ URL::current() }}&text={{ $post->title }}' target='_blank'><img src='https://res.cloudinary.com/siyfa/image/upload/v1571761066/a4zha34vheoeyzypvpqu.png' style='width: 25px;'></a>
-              
-              <!-- facebook share link -->
-              <a href='https://www.facebook.com/sharer/sharer.php?u={{ URL::current() }}' target='_blank'><img src='https://res.cloudinary.com/siyfa/image/upload/v1571761008/bzosk4pcqvpldu59bo0w.png' style='width: 25px;'></a>
-          </div> --}}
+          <div class="col-md-12">
+            <h1>{{ $post->title }}</h1>
+            <p style="text-align: justify; display: block;">
+              {{ $post->body }}
+            </p>
+          </div>
         </div>
       </div>
     </div>
 
     {{-- display comments here --}}
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <h3><span class="glyphicons glyphicons-comment"></span>Comment</h3>
+      <div class="col-md-12">
+        <h3><span class="glyphicons glyphicons-comment"></span>{{ count($post->comments) }} Comment(s)</h3>
         {{-- loop --}}
           <div class="comment">
             <div class="row">
-              <!--Authenticate user-->
-              @if(!Auth::guest())
+              <div class="col-md-8">
                 <!-- Post Comments here -->
                 @foreach ($post->comments as $comment)
-                  <div class="col-md-8">
-                    <h3>{{ $comment->user }}</h3>
-                    <div class="label">Posted on: {{ $comment->created_at }}</div>
-                    <h4>{{ $comment->comment }}</h4>
+                <div class="card mt-4">
+
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-2">
+                          <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
+                          <p class="text-secondary text-center">{{ $comment->created_at }}</p>
+                        </div>
+                        <div class="col-md-10">
+                          <p>
+                            <a href="#"><strong>{{ $comment->user }}</strong></a>
+                          </p>
+                          <p>
+                              {{ $comment->comment }}
+                          </p>
+                          <p>
+                            <a class="float-right btn btn-outline-primary ml-2">  <i class="fa fa-reply"></i> Reply</a>
+                            <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 @endforeach
+              </div>
             </div>
           </div>
       </div>
-    </div>      
+    </div>  
+    <!--Authenticate user-->
+      @if(!Auth::guest())    
 
     <div class="row">
-          <!-- Comment System -->
+          <!-- Comment Form -->
           <div class="col-md-9 mt-5">
             {{-- check if user is logged in --}}
 
@@ -156,9 +165,8 @@
                   @csrf
 
                   <div class="form-group row">
-                    <label for="comment" class="col-form-label text-md-right">{{ __('Comment') }}</label>
 
-                    <textarea id="comment" class="form-control @error('comment') is-invalid @enderror" name="comment" placeholder="Comment" value="{{ old('comment') }}" required autocomplete="comment"></textarea>
+                    <textarea id="comment" class="form-control @error('comment') is-invalid @enderror" name="comment" placeholder="Type Your Comment Here" value="{{ old('comment') }}" required autocomplete="comment"></textarea>
 
                     @error('comment')
                       <span class="invalid-feedback" role="alert">
@@ -179,10 +187,10 @@
                 </form>
               </div>
             @else
-              <div class="alert alert-danger"><h4>Comments disabled! Please Sign In to comment on this post <a href="/login" class="btn btn-primary">Login</a></h4></div>
               
-            @endif
           </div>
+          <div class="alert alert-danger"><h4>Comments disabled! You must signin before you can comment, click the button below to login<br><br> <a href="/login" class="btn btn-primary">Login</a></h4></div>
+          @endif
         </div>
       </div>
     </div>
