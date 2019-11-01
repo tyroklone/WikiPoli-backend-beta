@@ -15,6 +15,25 @@
 Route::get('/', function () {
     return view('web.index');
 });
+Route::get('/Terms', function () {
+    return view('Terms-of-use');
+});
+Route::get('/PrivacyPolicy', function () {
+    return view('privacypolicy');
+});
+Route::get('/About', function () {
+    return view('about');
+});
+Route::get('/Careers', function () {
+    return view('careers');
+});
+Route::get('/FAQs', function () {
+    return view('FAQ');
+});
+Route::get('/Donation', function () {
+    return view('donate_and_support_page');
+});
+
 Route::get('/posts', 'Web\WebController@index');
 
 Auth::routes();

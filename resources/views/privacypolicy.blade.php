@@ -244,40 +244,42 @@
     
 </section> 
 <footer>
-    <div class="container">
-        <div class="row links mt-sm-4">
-            <div class="col-sm-4  text-center">
-                <ul class="quick-links ">
-                    <h5 class="pb-sm-1 legal">Legal</h5>
-                    <li><a href="Terms-of-use.html">Terms of Use</a></li>
-                    <li><a href="privacypolicy.html">Privacy Policy</a></li>
-                </ul>
-            </div>
-                <div class="col-sm-4  text-center">
-                        <ul class="quick-links">
-                            <h5 class="pb-sm-1">Company</h5>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="careers.html">Careers</a></li>
-                            <li><a href="faq.html">FAQs</a></li>
-                            <li><a href="donate.html">Donations</a></li>
-                         </ul>
-                </div>
-                <div class="col-sm-4">
-                    <div class="text-center social-links">
-                    <h5 class="pb-sm-1"><a href="contact.html"></a>Connect With Us</h5>
-                    <a href="facebook.com"><img src="https://res.cloudinary.com/partypack/image/upload/v1571949779/facebook_1_psirwh.png" alt="facebook logo" class="ml-sm-1"/></a>
-                    <a href="twitter.com"><img src="https://res.cloudinary.com/partypack/image/upload/v1571950003/twitter-black-shape_1_cd5kqg.png" alt="twitter-logo" class="ml-sm-5"/></a>
-                    <a href="instagram.com"><img src="https://res.cloudinary.com/partypack/image/upload/v1571949995/instagram_1_ygjdky.png" alt="instagram logo" class="ml-sm-5"/></a>
-                    <p>contact@wikipoli.gq</p>
-                </div>
-            </div>
-          <div class="col-sm-12 copyright text-center">
-                   <p class="pr-sm-5">&copy; 2019 Wikipoli - All Rights Reserved</p>
-                </div>
-            </div>
-        </div>  
-    
-</footer> 
+			<div id="footer">
+				<div class="container">
+					<div class="row links">
+						<div class="col-md-4 col-sm-12  text-center">
+							<ul class="quick-links">
+								<li>Legal</li>
+								<li><a href="{{ url('/Terms') }}">Terms of Use</a></li>
+								<li><a href="{{ url('/PrivacyPolicy') }}">Privacy Policy</a></li>
+							</ul>
+						</div>
+						<div class="col-md-4 col-sm-12  text-center">
+							<ul class="quick-links">
+								<li>Company</li>
+								<li><a href="{{ url('/About') }}">About</a></li>
+								<li><a href="{{ url('/Careers') }}">Careers</a></li>
+								<li><a href="{{ url('/FAQs') }}">FAQs</a></li>
+								<li><a href="{{ url('/Donation') }}">Donations</a></li>
+							</ul>
+						</div>
+	
+						<div class="col-md-4 col-sm-12  text-center">
+							<div class="text-center social-links">
+								<h3>Connect With Us</h3>
+								<a href="facebook.com"><span class="fa fa-facebook"></span></a>
+								<a href="twitter.com"><span class="fa fa-twitter"></span></a>
+								<a href="instagram.com"><span class="fa fa-instagram"></span></a>
+								<p>contact@wikipoli.gq</p>
+							</div>
+						</div>
+						<div class="col-lg-12 copyright text-center">
+							<p>&copy; 2019 Wikipoli - All Rights Reserved</p>
+						</div>
+					</div>
+				</div> 
+			</div>
+		</footer> 
     
 </main>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

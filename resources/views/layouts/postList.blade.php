@@ -56,17 +56,17 @@
 						<div class="col-md-4 col-sm-12  text-center">
 							<ul class="quick-links">
 								<li>Legal</li>
-								<li><a href="Terms-of-use.html">Terms of Use</a></li>
-								<li><a href="privacypolicy.html">Privacy Policy</a></li>
+								<li><a href="{{ url('/Terms') }}">Terms of Use</a></li>
+								<li><a href="{{ url('/PrivacyPolicy') }}">Privacy Policy</a></li>
 							</ul>
 						</div>
 						<div class="col-md-4 col-sm-12  text-center">
 							<ul class="quick-links">
 								<li>Company</li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="careers.html">Careers</a></li>
-								<li><a href="faq.css">FAQs</a></li>
-								<li><a href="donation_page.html">Donations</a></li>
+								<li><a href="{{ url('/About') }}">About</a></li>
+								<li><a href="{{ url('/Careers') }}">Careers</a></li>
+								<li><a href="{{ url('/FAQs') }}">FAQs</a></li>
+								<li><a href="{{ url('/Donation') }}">Donations</a></li>
 							</ul>
 						</div>
 	
@@ -83,7 +83,7 @@
 							<p>&copy; 2019 Wikipoli - All Rights Reserved</p>
 						</div>
 					</div>
-				</div>
+				</div> 
 			</div>
 		</footer>
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
