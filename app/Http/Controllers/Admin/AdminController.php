@@ -16,6 +16,48 @@ class AdminController extends Controller {
         return view('admin.home', $data);
     }
 
+    // Method to show all pending posts
+    public function pendingPosts()
+    {
+     try {
+         $pending = [];
+         $posts = Posts::all();
+         foreach($posts as $post)
+         {
+          if($post->status == 0)
+          {
+           array_push($pending, $post);
+          }
+         }
+  
+         if(empty($pending))
+         {
+          $res['status'] = false;
+          $res['status_code'] = 404;
+          $res['message'] = "No Pending Posts Found!";
+   
+          return response()->json($res, $res['status_code']);
+         }
+          else
+         {
+          $res['status'] = true;
+          $res['status_code'] = 200;
+          $res['message'] = "Pending Posts Found!";
+          $res['pending_posts'] = $pending;
+   
+          return response()->json($res, $res['status_code']);
+         }
+        }
+         catch (\Exception $e)
+        {
+         $res['status_code'] = 501;
+         $res['message'] = 'An Unexpected Error Occured!';
+         $res['error'] = $e->getMessage();
+          
+         return response()->json($res, $res['status_code']);
+        }
+    }
+    
     public function postGet() {
         $filter = Request()->filter;
         if ($filter == 'approved') {
