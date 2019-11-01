@@ -18,9 +18,10 @@
 				}
 			?>
                  @forelse($posts as $post)
-			<div class="col-sm " id="post-1">
+			<div class="col-sm col-md-5" id="post-1">
                             
 				<div class="post">
+
 						<h4>{{ $post->title }}</h4>
 						<p>
 							{!! textShorten($post->body) !!}
@@ -33,6 +34,7 @@
 						<!-- facebook -->
 						<a href="https://www.facebook.com/sharer/sharer.php?u={{ URL::current() }}" target="_blank"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571761008/bzosk4pcqvpldu59bo0w.png" style="width: 25px;"></i></a>
 						<a href="" aria-hideen="true"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571760662/hq5ctfvhjv3r05bqdski.png" style="width: 25px;"></a>
+
 					</div>
 				</div>	
         
