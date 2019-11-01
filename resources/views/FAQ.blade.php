@@ -12,6 +12,124 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <link rel="icon" type="img/png" href="images/favicon.png">
+
+  <style>
+    
+
+     .side-segment h3:after,.side-segment h2:after {
+	background-color: #535a6b;
+} 
+
+ footer {
+    background: rgba(33, 60, 220, 0.1);
+    margin: auto;
+    overflow: hidden;
+    padding: 15px;
+}
+.footer_elements,
+.footer_brand {
+    display:  flex;
+    flex-direction: column;
+    padding-inline-start:  0px;
+    align-items: center;
+    margin: 0 0 0 0;
+}
+.footer_elements {
+    width: auto;
+}
+.footer_elements li {
+    font-weight:  bold;
+    font-size: 18px;
+    display: inline-block;
+    padding:  5px;      
+    width: fit-content;
+}
+.footer_elements li  a {
+    text-decoration: none;
+    color: black;
+}
+.footer_brand  img {
+    height:  80px;
+    width: 100px;
+    vertical-align: middle;
+}
+@media screen  and (min-width: 600px){
+    .footer_brand {
+                        float: left;
+    }
+    .footer_brand {
+                        left: 223px;
+                        margin: 0 0 0 5vw ;
+    }
+    
+    .footer_elements li { 
+                        margin: 0 0 0 20px ;
+    }
+    .footer_elements{
+                        margin:  15px 0 0 0;
+                        /* line-height: 60px; */
+                        /* vertical-align: middle;
+                        flex-direction:  row;
+                        padding-inline-start:  0px;
+                        justify-content: flex-end;
+    }
+} 
+
+ footer {
+    background: rgba(33, 60, 220, 0.1);
+    margin: auto;
+    overflow: hidden;
+    padding: 15px;
+}
+.footer_elements,
+.footer_brand {
+    display:  flex;
+    flex-direction: column;
+    padding-inline-start:  0px;
+    align-items: center;
+    margin: 0 0 0 0;
+}
+.footer_elements {
+    width: auto;
+}
+.footer_elements li {
+    font-weight:  bold;
+    font-size: 18px;
+    display: inline-block;
+    padding:  5px;      
+    width: fit-content;
+}
+.footer_elements li  a {
+    text-decoration: none;
+    color: black;
+}
+.footer_brand  img {
+    height:  80px;
+    width: 100px;
+    vertical-align: middle; 
+
+ } 
+ @media screen  and (min-width: 600px){
+    .footer_brand {
+                        float: left;
+    }
+    .footer_brand {
+                        left: 223px;
+                        margin: 0 0 0 5vw ;
+    }
+    .footer_elements li { 
+                        margin: 0 0 0 20px ;
+    }
+    .footer_elements{
+                        margin:  15px 0 0 0; */
+                        /* line-height: 60px; */
+                        /* vertical-align: middle;
+                        flex-direction:  row;
+                        padding-inline-start:  0px;
+                        justify-content: flex-end;
+    }
+} 
+  </style>
 </head>
 
 <body>
@@ -157,17 +275,44 @@
 </section>
 <br>
 <br>
-  <footer> 
 
-    <a class="footer_brand" href="index.html"><img src="https://res.cloudinary.com/fabianuzukwu/image/upload/v1571749198/c09e9odiqy2cvkosfubl.png" alt=""></a>
-    <ul class="footer_elements"> 
-
-                        <li ><a href="./privacypolicy.html">Privacy Policy</a></li>
-                        <li><a href="#">About WikiPoli</a></li>
-                        <li><a href="./contact.html">Contact WikiPoli</a></li>
-
-    </ul>
-</footer>
+<footer>
+			<div id="footer">
+				<div class="container">
+					<div class="row links">
+						<div class="col-md-4 col-sm-12  text-center">
+							<ul class="quick-links">
+								<li>Legal</li>
+								<li><a href="{{ url('/Terms') }}">Terms of Use</a></li>
+								<li><a href="{{ url('/PrivacyPolicy') }}">Privacy Policy</a></li>
+							</ul>
+						</div>
+						<div class="col-md-4 col-sm-12  text-center">
+							<ul class="quick-links">
+								<li>Company</li>
+								<li><a href="{{ url('/About') }}">About</a></li>
+								<li><a href="{{ url('/Careers') }}">Careers</a></li>
+								<li><a href="{{ url('/FAQs') }}">FAQs</a></li>
+								<li><a href="{{ url('/Donation') }}">Donations</a></li>
+							</ul>
+						</div>
+	
+						<div class="col-md-4 col-sm-12  text-center">
+							<div class="text-center social-links">
+								<h3>Connect With Us</h3>
+								<a href="facebook.com"><span class="fa fa-facebook"></span></a>
+								<a href="twitter.com"><span class="fa fa-twitter"></span></a>
+								<a href="instagram.com"><span class="fa fa-instagram"></span></a>
+								<p>contact@wikipoli.gq</p>
+							</div>
+						</div>
+						<div class="col-lg-12 copyright text-center">
+							<p>&copy; 2019 Wikipoli - All Rights Reserved</p>
+						</div>
+					</div>
+				</div> 
+			</div>
+		</footer>
 
 </body>
 
