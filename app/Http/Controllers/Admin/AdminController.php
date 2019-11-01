@@ -121,4 +121,20 @@ class AdminController extends Controller {
         return back();
     }
 
+    //users
+    public function userGet() {
+        $filter = Request()->filter;
+        if ($filter == 'blocked') {
+            $data['users'] = User::with(["user_statuses" => function($q) {
+                            $q->where('user_statuses.status', '=', 'blocked');
+                        }])->orderBy('created_at', 'DESC')->with('user_statuses')->paginate(15);
+        } elseif ($filter == 'soft') {
+            $data['users'] = User::onlyTrashed()->with('user_statuses')->orderBy('created_at', 'desc')->paginate(15);
+        } else {
+            $data['users'] = User::with('user_statuses')->orderBy('created_at', 'desc')->paginate(15);
+        }
+
+        return view('admin.user.index', $data);
+    }
+
 }
