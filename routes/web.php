@@ -23,11 +23,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/post', function () {
-    return view('postpage1');
-});
-
+Route::get('/post', 'PostsController@index');
 Route::get('/post/{id}', 'PostsController@show')->name('post.show');
+Route::post('/comments/{id}', 'CommentsController@store');
 
 
 // Auth::routes();

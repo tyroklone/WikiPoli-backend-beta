@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 // bring in the relationships
-use App\Comments;
+use App\Comment;
 use App\Posts;
 class CommentsController extends Controller
 {
@@ -41,16 +41,15 @@ class CommentsController extends Controller
             'comment' => 'required|min:5|max:5000'
         ]);
 
-        $comment = new Comments;
-        $comment->post_id = $postId;
-        $comment->comment = $request->input('comment');
+        $comment = new Comment;
         $comment->user = $request->input('user');
-        
+        $comment->comment = $request->input('comment');
+        $comment->posts_id = $postId;
+
         $comment->save();
         
-        Session::flash('success', 'Comment Added Successfully!');
+        //Session::flash('success', 'Comment Added Successfully!');
 
-        // this is how to redirect back to a page with a reply message when you send data to the database
         return redirect()->back();
     }
 

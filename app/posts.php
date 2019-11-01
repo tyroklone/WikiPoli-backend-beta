@@ -7,10 +7,18 @@ use Laravelista\Comments\Commentable;
 
 class Posts extends Model
 {
-    use Commentable;
+    // comment package
+    //use Commentable;
+    
+    protected $table = 'posts';
+
+    public $primaryKey = 'id';
+
+    protected $fillable = ['user', 'comment', 'post_id'];
     
     public function comments()
     {
-        return $this->hasMany('App\Comments');
+        //return $this->hasMany('App\Comment', 'post_id', 'id');
+        return $this->hasMany('App\Comment');
     }
 }

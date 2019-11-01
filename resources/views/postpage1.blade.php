@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href= "{{ asset('css/styles/postpage1.css') }}"/>
-	<link rel="stylesheet" href="{{ asset('css/styles/index.css') }}"/>
+    <link rel="stylesheet" type="text/css" href= "{{ asset('styles/postpage1.css') }}"/>
+	<link rel="stylesheet" href="{{ asset('styles/index.css') }}"/>
 	<link rel="icon" type="img/png" href="images/favicon.png">
 	<title>WikiPoli | Posts</title>
 
@@ -42,9 +42,12 @@ font-size: 1.5em;
   cursor: pointer;
   transition: 0.3s ease-out;
 }
-.col-sm:hover
-{
-  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.2);
+.post {
+	border: 1px solid #6A9AD1;
+	padding: 30px;
+}
+.post:hover {
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.2);
 }
 .custom-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
@@ -145,7 +148,7 @@ margin-right: 80px;
 
 }
 .post{
-padding: 10px 10px 10px 60px;
+padding: 10px 10px 10px 10px;
 }
 .icon a{
 padding-right: 7px;
@@ -230,6 +233,9 @@ padding-right: 20px;
   }
 }
 @media all and (max-width:500px){
+	.post {
+		border: none;
+	}
   .footer-links .left, .footer-links .right{
       float: none;
       max-width: 100%;
@@ -295,149 +301,39 @@ padding-right: 20px;
 	</div>
 
 	<div class="container main">
-		<div class="row">
-			<div class="col-sm" id="post-1">
-				<div class="post">
-						<h4>ProfErons</h4>
-						<p><strong>Felatoye Durotoye</strong>  is a Leadership Expert, Motivational Speaker . Lorem ipsumsit amet, consectetur adipiscing elsit amet, consectetur adipiscing elsit amet, consectetur adipiscing el  <a href="">Read More</a>
-							</p>
-					<!-- <div class="icon">
-						<a href="" class="" aria-hideen="true"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571760606/zbjtlwqjffgwvyc9klvc.png" style="width: 25px;"></a>
-						<a href=""><img src="https://res.cloudinary.com/siyfa/image/upload/v1571761066/a4zha34vheoeyzypvpqu.png" style="width: 25px;"></a>
-		                <a href=""><img src="https://res.cloudinary.com/siyfa/image/upload/v1571761008/bzosk4pcqvpldu59bo0w.png" style="width: 25px;"></i></a>
-		                <a href="" aria-hideen="true"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571760662/hq5ctfvhjv3r05bqdski.png" style="width: 25px;"></a>
-					</div> -->
-				</div>	
-			</div>
-			<div class="col-sm">
-				<div class="post">
-						<h4>Xyluz</h4>
-						<p><strong>Buhari Jibril</strong>  is a Leadership Expert, Motivational Speaker . Lorem ipsumsit amet, consectetur adipiscing elsit amet, consectetur adipiscing elsit amet, consectetur adipiscing el  <a href="">Read More</a> 
-						</p>
-					<!-- <div class="icon">
-						<a href="" class="" aria-hideen="true"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571760606/zbjtlwqjffgwvyc9klvc.png" style="width: 25px;"></a>
-						<a href=""><img src="https://res.cloudinary.com/siyfa/image/upload/v1571761066/a4zha34vheoeyzypvpqu.png" style="width: 25px;"></a>
-		                <a href=""><img src="https://res.cloudinary.com/siyfa/image/upload/v1571761008/bzosk4pcqvpldu59bo0w.png" style="width: 25px;"></i></a>
-		                <a href="" aria-hideen="true"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571760662/hq5ctfvhjv3r05bqdski.png" style="width: 25px;"></a>
-					</div> -->
-				</div>
-			</div>
-
-		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-sm" id="post-1">
-				<div class="post">
-						<h4>theresand</h4>
-						<p><strong>Sanwoolu</strong>  is a Leadership Expert, Motivational Speaker . Lorem ipsumsit amet, consectetur adipiscing elsit amet, consectetur adipiscing elsit amet, consectetur adipiscing el  <a href="">Read More</a> 
-						</p>
-					<!-- <div class="icon">
-						<a href="" class="" aria-hideen="true"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571760606/zbjtlwqjffgwvyc9klvc.png" style="width: 25px;"></a>
-						<a href=""><img src="https://res.cloudinary.com/siyfa/image/upload/v1571761066/a4zha34vheoeyzypvpqu.png" style="width: 25px;"></a>
-		                <a href=""><img src="https://res.cloudinary.com/siyfa/image/upload/v1571761008/bzosk4pcqvpldu59bo0w.png" style="width: 25px;"></i></a>
-		                <a href="" aria-hideen="true"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571760662/hq5ctfvhjv3r05bqdski.png" style="width: 25px;"></a>
-					</div> -->
-				</div>	
-			</div>
-			<div class="col-sm">
-				<div class="post">
-					<h4>Johnson</h4>
-						<p><strong>Goodluck Jonathan</strong>  is a Leadership Expert, Motivational Speaker . Lorem ipsumsit amet, consectetur adipiscing elsit amet, consectetur adipiscing elsit amet, consectetur adipiscing el  <a href="">Read More</a> 
-						</p>
+			<div class="row mt-5" id="posts">
+				<!-- all posts loops here -->
+						{{-- Function to shorten the texts --}}
+						<?php
+							function textShorten($text, $limit = 400){
+								$text = $text. " ";
+								$text = substr($text, 0, $limit);
+								$text = substr($text, 0, strrpos($text, ' '));
+								$text = $text."...";
+								return $text;
+							}
+						?>
+						@if(count($posts) > 0)
+						@foreach($posts as $post)
 						
-					<!-- <div class="icon">
-						<a href="" class="" aria-hideen="true"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571760606/zbjtlwqjffgwvyc9klvc.png" style="width: 25px;"></a>
-						<a href=""><img src="https://res.cloudinary.com/siyfa/image/upload/v1571761066/a4zha34vheoeyzypvpqu.png" style="width: 25px;"></a>
-		                <a href=""><img src="https://res.cloudinary.com/siyfa/image/upload/v1571761008/bzosk4pcqvpldu59bo0w.png" style="width: 25px;"></i></a>
-		                <a href="" aria-hideen="true"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571760662/hq5ctfvhjv3r05bqdski.png" style="width: 25px;"></a>
-					</div> -->
-				</div>
-			</div>
-			
-		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-sm" id="post-1">
-				<div class="post">
-						<h4>goodwill</h4>
-						<p><strong>Segun Obasanjo</strong>  is a Leadership Expert, Motivational Speaker . Lorem ipsumsit amet, consectetur adipiscing elsit amet, consectetur adipiscing elsit amet, consectetur adipiscing el  <a href="">Read More</a> 
-						</p>
-					<!-- <div class="icon">
-						<a href="" class="" aria-hideen="true"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571760606/zbjtlwqjffgwvyc9klvc.png" style="width: 25px;"></a>
-						<a href=""><img src="https://res.cloudinary.com/siyfa/image/upload/v1571761066/a4zha34vheoeyzypvpqu.png" style="width: 25px;"></a>
-		                <a href=""><img src="https://res.cloudinary.com/siyfa/image/upload/v1571761008/bzosk4pcqvpldu59bo0w.png" style="width: 25px;"></i></a>
-		                <a href="" aria-hideen="true"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571760662/hq5ctfvhjv3r05bqdski.png" style="width: 25px;"></a>
-					</div> -->
-				</div>	
-			</div>
-			<div class="col-sm">
-				<div class="post">
-						<h4>Chiagoziem</h4>
-						<p><strong>Bola Tinubu</strong>  is a Leadership Expert, Motivational Speaker . Lorem ipsumsit amet, consectetur adipiscing elsit amet, consectetur adipiscing elsit amet, consectetur adipiscing el  <a href="">Read More</a> 
-						</p>
-							  
-					<!-- <div class="icon">
-						<a href="" class="" aria-hideen="true"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571760606/zbjtlwqjffgwvyc9klvc.png" style="width: 25px;"></a>
-						<a href=""><img src="https://res.cloudinary.com/siyfa/image/upload/v1571761066/a4zha34vheoeyzypvpqu.png" style="width: 25px;"></a>
-		                <a href=""><img src="https://res.cloudinary.com/siyfa/image/upload/v1571761008/bzosk4pcqvpldu59bo0w.png" style="width: 25px;"></i></a>
-		                <a href="" aria-hideen="true"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571760662/hq5ctfvhjv3r05bqdski.png" style="width: 25px;"></a>
-					</div> -->
-				</div>
-			</div>
-			
-		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-sm" id="post-1">
-				<div class="post">
-						<h4>TomisinLalude</h4>
-						<p><strong>Raji Fashola</strong>  is a Leadership Expert, Motivational Speaker . Lorem ipsumsit amet, consectetur adipiscing elsit amet, consectetur adipiscing elsit amet, consectetur adipiscing el  <a href="">Read More</a> 
+				<div class="col-md-6">
+						<div class="post">
+							<h4>{{$post->title}}</h4>
+							<p>								
+								{{ textShorten($post->body) }}
 							</p>
-					<!-- <div class="icon">
-						<a href="" class="" aria-hideen="true"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571760606/zbjtlwqjffgwvyc9klvc.png" style="width: 25px;"></a>
-						<a href=""><img src="https://res.cloudinary.com/siyfa/image/upload/v1571761066/a4zha34vheoeyzypvpqu.png" style="width: 25px;"></a>
-		                <a href=""><img src="https://res.cloudinary.com/siyfa/image/upload/v1571761008/bzosk4pcqvpldu59bo0w.png" style="width: 25px;"></i></a>
-		                <a href="" aria-hideen="true"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571760662/hq5ctfvhjv3r05bqdski.png" style="width: 25px;"></a>
-					</div> -->
-				</div>	
+							<a href="/post/{{ $post->id }}">Read More</a>
+					</div>
+				</div> 
+				@endforeach
+				{{$posts->links()}}   
+				@else
+						<p>No Post Available At The Moment!</p>
+				@endif
 			</div>
-			<div class="col-sm">
-				<div class="post">
-						<h4>Thanos</h4>
-						<p><strong>Bukola Saraki</strong>  is a Leadership Expert, Motivational Speaker . Lorem ipsumsit amet, consectetur adipiscing elsit amet, consectetur adipiscing elsit amet, consectetur adipiscing el  <a href="">Read More</a> 
-						</p>
-					<!-- <div class="icon">
-						<a href="" class="" aria-hideen="true"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571760606/zbjtlwqjffgwvyc9klvc.png" style="width: 25px;"></a>
-						<a href=""><img src="https://res.cloudinary.com/siyfa/image/upload/v1571761066/a4zha34vheoeyzypvpqu.png" style="width: 25px;"></a>
-		                <a href=""><img src="https://res.cloudinary.com/siyfa/image/upload/v1571761008/bzosk4pcqvpldu59bo0w.png" style="width: 25px;"></i></a>
-		                <a href="" aria-hideen="true"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571760662/hq5ctfvhjv3r05bqdski.png" style="width: 25px;"></a>
-					</div> -->
-				</div>
-			</div>
-			
 		</div>
 	</div>
-	
-	<div class="pagination">
-		<ul class="pages">
-			<li><img src="https://res.cloudinary.com/siyfa/image/upload/v1571762484/cezdbfynpv1dvjfopzy0.png" style="width: 10px; color: #333333;"></li>
-			<li class="pageitem">
-				<a href="postpage1.html" class="pagelink" style="color: #0000FF; font-size: 1.3em;">1</a>
-			</li>
-			<li class="pageitem">
-				<a href="post-page-2.html" class="pagelink" style="color: #333333; font-size: 1.2em;">2</a>
-			<li class="pageitem">
-				<a href="post_page_3.html" class="pagelink" style="color: #333333; font-size: 1.2em;">3</a>
-			</li>
-			<li><img src="https://res.cloudinary.com/siyfa/image/upload/v1571762485/sk98ivrsx2v2ypqgrguh.png" style="width: 10px; color: #333333;"> </li>
-		</ul>
-	</div>
-	
-
-
+		
 		<footer>
 			<div id="footer">
 				<div class="container">

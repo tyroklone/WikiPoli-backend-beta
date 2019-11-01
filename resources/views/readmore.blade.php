@@ -1,3 +1,12 @@
+<?php
+  function textShorten($text, $limit = 150){
+    $text = $text. " ";
+    $text = substr($text, 0, $limit);
+    $text = substr($text, 0, strrpos($text, ' '));
+    $text = $text."...";
+    return $text;
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,13 +30,13 @@
     <meta name="twitter:site" content="{{ URL::current() }}">
     <meta name="twitter:creator" content="">
     <meta name="twitter:title" content="{{ $post->title }}">
-    <meta name="twitter:description" content="{{ $post->body }}">
+    <meta name="twitter:description" content="{{ textShorten($post->body) }}">
     <meta name="twitter:image" content="https://res.cloudinary.com/fabianuzukwu/image/upload/v1571749198/c09e9odiqy2cvkosfubl.png">
 
     <!-- Facebook & Whatsapp -->
     <meta property="og:title" content="{{ $post->title }}">
     <meta property="og:url" content="{{ URL::current() }}">
-    <meta property="og:description" content="{{ $post->body }}">
+    <meta property="og:description" content="{{ textShorten($post->body) }}">
     <meta property="og:image" content="https://res.cloudinary.com/fabianuzukwu/image/upload/v1571749198/c09e9odiqy2cvkosfubl.png">
     <meta property="og:image:secure_url" content="https://res.cloudinary.com/fabianuzukwu/image/upload/v1571749198/c09e9odiqy2cvkosfubl.png">
     <meta property="og:image:width" content="300">
@@ -40,7 +49,7 @@
     <div class="row">
       <div class="col-md-6">
         <span id="logo">
-          <a href=""><img src="https://res.cloudinary.com/fabianuzukwu/image/upload/v1571749198/c09e9odiqy2cvkosfubl.png" alt="wikipoli-site-logo" width="100"/></a>
+          <a href="/post"><img src="https://res.cloudinary.com/fabianuzukwu/image/upload/v1571749198/c09e9odiqy2cvkosfubl.png" alt="wikipoli-site-logo" width="100"/></a>
         </span>
       </div>
       {{-- Check if user is logged in --}}
@@ -83,6 +92,7 @@
     </div>
     @else 
     <div class="col-md-7">
+        <a href="{{ route('login') }}" id="btn" class="btn btn-sm btn-primary">Login</a>
     </div>
     <div class="col-md-5">
       <div class="input-group mb-3" style="text-align-last: inherit;">
@@ -121,7 +131,16 @@
         {{-- loop --}}
           <div class="comment">
             <div class="row">
-              {{-- @comments(['model' => $post]) --}}
+              <!--Authenticate user-->
+              @if(!Auth::guest())
+                <!-- Post Comments here -->
+                @foreach ($post->comments as $comment)
+                  <div class="col-md-8">
+                    <h3>{{ $comment->user }}</h3>
+                    <div class="label">Posted on: {{ $comment->created_at }}</div>
+                    <h4>{{ $comment->comment }}</h4>
+                  </div>
+                @endforeach
             </div>
           </div>
       </div>
@@ -132,8 +151,6 @@
           <div class="col-md-9 mt-5">
             {{-- check if user is logged in --}}
 
-            @if(!Auth::guest())
-              <div class="comment-form" id="comment-form">
                 {{-- Form --}}
                 <form method="POST" action="{{ url('/comments/'.$post->id) }}">
                   @csrf
@@ -149,7 +166,7 @@
                       </span>
                     @enderror
                   </div>
-                  <input type="hidden" name="user" value="{{ Auth::user()->username }}">
+                  <input type="hidden" name="user" value="{{ Auth::user()->full_name }}">
                   <input type="hidden" name="post_id" value="{{ $post->post_id }}">
 
                   <div class="form-group row mb-0">
@@ -162,7 +179,8 @@
                 </form>
               </div>
             @else
-              <div class="alert alert-danger"><h4>Comments disabled! Please Sign In to comment on this post</h4></div>
+              <div class="alert alert-danger"><h4>Comments disabled! Please Sign In to comment on this post <a href="/login" class="btn btn-primary">Login</a></h4></div>
+              
             @endif
           </div>
         </div>
@@ -208,5 +226,7 @@
     </div>
   </div>  
   <script async src="https://static.addtoany.com/menu/page.js"></script>
+  <script src="{{ asset('/assets/jquery.min.js') }}"></script>
+  <script src="{{ asset('/assets/comment.js') }}"></script>
 </body>
 </html>

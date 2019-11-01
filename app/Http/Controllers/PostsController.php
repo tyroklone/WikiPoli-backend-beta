@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Posts;
+use App\Comment;
 
 class PostsController extends Controller
 {
@@ -13,8 +14,9 @@ class PostsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {   
+        $posts = Posts::orderBy('id', 'DESC')->paginate(10);
+        return view('postpage1')->with('posts', $posts);
     }
 
     /**
