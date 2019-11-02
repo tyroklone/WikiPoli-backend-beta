@@ -184,4 +184,5 @@ class FaqController extends Controller
           
           return response()->json($res, $res['status_code']);
          }
+     }
 }

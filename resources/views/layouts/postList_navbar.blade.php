@@ -32,13 +32,15 @@
             </ul>
         </div>
     </div>
-</nav>
-
+</nav> 
+ 
 <!--h1 id="posts-intro">All Posts</h1-->
 <div class="search">
-  
+@if (Route::has('login'))
+    @auth
    <a href="{{url('create-post')}}"> <button  id="create-post">New Post</button></a>
-  
+    @endauth
+    @endif
     <form action="action_page.php">
         <input type="text" name="search" placeholder="Search Politician's name" class="justify-content-right">
         <input type="submit" name="Submit" value="Search">
