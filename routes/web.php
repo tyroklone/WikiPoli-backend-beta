@@ -34,9 +34,10 @@ Route::get('/Donation', function () {
     return view('donate_and_support_page');
 });
 
-Route::get('/posts', 'Web\WebController@index');
+//Route::get('/posts', 'Web\WebController@index');
+Route::get('/posts', 'PostsController@index');
 
-// Route::get('/post', 'PostsController@index');
+
 Route::get('/post/{id}', 'PostsController@show')->name('post.show');
 Route::post('/comments/{id}', 'CommentsController@store');
 
@@ -64,10 +65,14 @@ Route::post('/save-draft', 'Post\PostController@draft');
 //Admin Routes
 Route::group(['middleware' => ['role:SuperAdmin|Admin']], function () {
     Route::get('/admin/home', 'Admin\AdminController@index')->name('admin.home');
+    //posts
     Route::get('/admin/posts', 'Admin\AdminController@postGet')->name('admin.posts');
     Route::post('approve-post/{id}', 'Admin\AdminController@approve');
     Route::post('unapprove-post/{id}', 'Admin\AdminController@Unapprove');
     Route::post('delete-temporary-post/{id}', 'Admin\AdminController@deleteTemporary');
     Route::post('delete-permanently-post/{id}', 'Admin\AdminController@deletePermanently');
     Route::post('delete-restore-post/{id}', 'Admin\AdminController@restore');
+    
+    //users
+    Route::get('/admin/users', 'Admin\AdminController@userGet')->name('admin.users');
 });

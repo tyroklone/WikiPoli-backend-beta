@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration {
             $table->unsignedBigInteger('status_id');
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
             $table->foreign('status_id')
                     ->references('id')->on('user_statuses')->onUpdate('cascade');
         });
