@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="{{ asset('css/styles/about.css') }}"/>
   <link rel="icon" type="img/png" href="images/favicon.png">
-  <title>About Us</title>
+  <title>WikiPoli | About Us</title>
 </head>
 <style type="text/css">
   #footer{
@@ -358,7 +358,7 @@ p {
   <div id="wrapper">
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg">
-        <a href="index.html" class="navbar-brand logo">
+        <a href="{{ url('/posts') }}" class="navbar-brand logo">
           <img src="https://res.cloudinary.com/fabianuzukwu/image/upload/v1571749198/c09e9odiqy2cvkosfubl.png"
             alt="WikiPoli Logo">
         </a>
@@ -369,7 +369,7 @@ p {
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="nav navbar-nav ml-auto menu">
             <li class="nav-item">
-              <a class="nav-link" href="index.html"><strong>Home</strong></a>
+              <a class="nav-link" href="{{ url('/posts') }}"><strong>Home</strong></a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="about.html"><strong>About us</strong></a>
