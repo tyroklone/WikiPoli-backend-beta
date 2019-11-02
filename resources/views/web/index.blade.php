@@ -8,11 +8,11 @@
         <div class="col-lg-12">
           <div class="form-content">
             <h1 class="text-center"><strong>Get To Know Your Candidate</strong></h1>
-            <form>
+                <form action="{{url('search')}}" method="get" >
               <div class="input-group">
-                <input type="text" placeholder="Enter Politician's Name" class="form-control">
+                <input type="text"  name="q" value="{{request('q')}} " placeholder="Enter Politician's Name" class="form-control">
                 <div class="input-group-append">
-                  <button type="button" class="button-search">Search</button>
+                    <button type="submit" class="button-search">Search</button>
                 </div>
               </div>
             </form>
