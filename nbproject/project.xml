@@ -6,6 +6,7 @@
             <name>WikiPoli-backend-beta</name>
         </data>
         <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>Auth</word>
             <word>csrf</word>
         </spellchecker-wordlist>
     </configuration>

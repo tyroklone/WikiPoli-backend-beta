@@ -12,8 +12,8 @@
         </div>
         <div id="user-div">
             <span id="name-plate">
-                @if(session()->has('message.content'))
-                {!! session('message.content') !!} ,
+                @if(session()->has('login.content'))
+                {!! session('login.content') !!} ,
                 @endif
                 {{Auth::user()->full_name}}
             </span>

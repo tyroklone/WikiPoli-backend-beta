@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\Traits\HasError;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
+use App\Politician;
+use Spatie\Searchable\Search;
+use App\PoliticianPost;
 
 class PostController extends Controller {
 
@@ -29,65 +32,41 @@ class PostController extends Controller {
         ];
 
 
-        $error = static::getErrorMessage($input, $rules);
+        $error = static::getErrorMessageAjax($input, $rules);
         if ($error) {
             return $error;
         }
         $input['status'] = 0;
         $input['author_id'] = Auth::user()->id;
         $title = $request->title;
-          $input['slug'] = $this->makeSlug($title);
-        Post::create($input);
-        session()->flash('message.alert', 'success');
-        session()->flash('message.content', 'Post  Successfully Added , Waiting For Review');
-        return Redirect::back();
+        $input['slug'] = $this->makeSlug($title);
+        //check mention
+        $body = strip_tags($request->body);
+
+        $post = Post::create($input);
+        $mentions = (new Search())
+                ->registerModel(Politician::class, 'first_name', 'last_name')
+                ->search($body);
+        if (is_object($mentions)) {
+            foreach ($mentions as $mention) {
+                PoliticianPost::create([
+                    'post_id' => $post->id,
+                    'politician_id' => $mention->title
+                ]);
+            }
+        }
+        return ([
+            'status' => 200,
+            'message' => 'Post  Successfully Added , Waiting For Review'
+        ]);
     }
 
-    // Method to show all pending posts
-    public function pendingPosts()
-    {
-     try {
-         $pending = [];
-         $posts = Posts::all();
-         foreach($posts as $post)
-         {
-          if($post->status == 0)
-          {
-           array_push($pending, $post);
-          }
-         }
-  
-         if(empty($pending))
-         {
-          $res['status'] = false;
-          $res['status_code'] = 404;
-          $res['message'] = "No Pending Posts Found!";
-   
-          return response()->json($res, $res['status_code']);
-         }
-          else
-         {
-          $res['status'] = true;
-          $res['status_code'] = 200;
-          $res['message'] = "Pending Posts Found!";
-          $res['pending_posts'] = $pending;
-   
-          return response()->json($res, $res['status_code']);
-         }
-        }
-         catch (\Exception $e)
-        {
-         $res['status_code'] = 501;
-         $res['message'] = 'An Unexpected Error Occured!';
-         $res['error'] = $e->getMessage();
-          
-         return response()->json($res, $res['status_code']);
-        }
-    }
-     
     public function draft(Request $request) {
 
-        dd('todo');
+        return ([
+            'status' => 422,
+            'message' => 'Todo'
+        ]);
     }
 
 }
