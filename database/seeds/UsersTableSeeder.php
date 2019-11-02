@@ -45,7 +45,27 @@ class UsersTableSeeder extends Seeder {
         $user2->password = bcrypt('secret');
         $user2->save();
         $user2->assignRole($role2);
-        
+
+        $user3 = new User();
+        $user3->full_name = 'Adelugba Emmanuel';
+        $user3->description = 'Web Developer';
+        $user3->location = 'Ibadan, Nigeria';
+        $user3->status_id = 1;
+        $user3->email = "bringforthjoy@gmail.com";
+        $user3->email_verified_at = Carbon::now();
+        $user3->password = bcrypt('000000');
+        $user3->save();
+        $user3->assignRole($role);
+        $user4 = new User();
+        $user4->full_name = 'Adelugba Emmanuel';
+        $user4->description = 'Web Developer';
+        $user4->location = 'Ibadan, Nigeria';
+        $user4->status_id = 1;
+        $user4->email = "adelugba.emma@gmail.com";
+        $user4->email_verified_at = Carbon::now();
+        $user4->password = bcrypt('000000');
+        $user4->save();
+        $user4->assignRole($role2);
         
     }
 
