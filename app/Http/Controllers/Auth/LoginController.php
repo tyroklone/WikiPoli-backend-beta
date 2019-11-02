@@ -27,7 +27,7 @@ use AuthenticatesUsers;
      */
     public function redirectTo() {
         if (auth()->user()->hasanyrole('Admin|SuperAdmin')) {
-            session()->flash('message.content', 'Hello');
+            session()->flash('login.content', 'Hello');
             return 'admin/home';
         } else {
             return 'home';

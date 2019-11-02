@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css">
         <link rel="stylesheet" type="text/css" href="{{asset('styles/admin-dashboard-general.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('styles/admin-dashboard-sidebar.css')}}">
+       <link rel="stylesheet" href="{{asset('styles/dashboard-activities.css')}}" />
         <link rel="icon" type="img/png" href="{{asset('images/favicon.png')}}">
 
     </head>
@@ -27,6 +28,13 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="{{asset('scripts/index.js')}}"></script>
         <script src="{{asset('js/app.js')}}"></script>
+         <script>
+$('#customFile').on('change', function () {
+    var fileName = $(this).val();
+    $(this).next('.custom-file-label').html(fileName);
+});
+
+        </script>
         <script>
 $(".deleted").on("submit", function () {
 
@@ -55,6 +63,19 @@ $(".deleted").on("submit", function () {
                     window.location.href = "/admin/users";
                 else
                     window.location.href = "/admin/users?filter=" + selectStatusUser.value;
+            }, false);
+
+        </script>
+        
+         <script>
+          
+            let selectStatusAdmin = document.querySelector('#select-filter-admin');
+            selectStatusAdmin.addEventListener('change', function () {
+             
+                if (selectStatusAdmin.value === 'all')
+                    window.location.href = "/admin/all-admins";
+                else
+                    window.location.href = "/admin/all-admins?filter=" + selectStatusAdmin.value;
             }, false);
 
         </script>

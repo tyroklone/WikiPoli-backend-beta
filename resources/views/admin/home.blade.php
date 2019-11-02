@@ -33,7 +33,8 @@
            <span style="color: red!important">({{number_format($users)}})</span>
         </a>
         @hasanyrole('SuperAdmin')
-        <a href="{{url('admin/privileges')}}">Manage Privileges
+        <a href="{{url('admin/politicians')}}">Politicians
+              <span style="color: red!important">(coming soon)</span>
         </a>
         @endhasanyrole
     </section>

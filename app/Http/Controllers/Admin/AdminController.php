@@ -6,8 +6,13 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Models\Post;
+use Spatie\Permission\Models\Role;
+use App\Politician;
+use App\Http\Controllers\Traits\HasError;
 
 class AdminController extends Controller {
+
+    use HasError;
 
     public function index() {
         $data['recents'] = Post::where('created_at', '>=', \Carbon\Carbon::now()->subDay())->count();
@@ -16,48 +21,11 @@ class AdminController extends Controller {
         return view('admin.home', $data);
     }
 
-    // Method to show all pending posts
-    public function pendingPosts()
-    {
-     try {
-         $pending = [];
-         $posts = Posts::all();
-         foreach($posts as $post)
-         {
-          if($post->status == 0)
-          {
-           array_push($pending, $post);
-          }
-         }
-  
-         if(empty($pending))
-         {
-          $res['status'] = false;
-          $res['status_code'] = 404;
-          $res['message'] = "No Pending Posts Found!";
-   
-          return response()->json($res, $res['status_code']);
-         }
-          else
-         {
-          $res['status'] = true;
-          $res['status_code'] = 200;
-          $res['message'] = "Pending Posts Found!";
-          $res['pending_posts'] = $pending;
-   
-          return response()->json($res, $res['status_code']);
-         }
-        }
-         catch (\Exception $e)
-        {
-         $res['status_code'] = 501;
-         $res['message'] = 'An Unexpected Error Occured!';
-         $res['error'] = $e->getMessage();
-          
-         return response()->json($res, $res['status_code']);
-        }
+    public function politicianGet() {
+        $data['politicians'] = Politician::paginate(15);
+        return view('admin.politicians', $data);
     }
-    
+
     public function postGet() {
         $filter = Request()->filter;
         if ($filter == 'approved') {
@@ -135,6 +103,169 @@ class AdminController extends Controller {
         }
 
         return view('admin.user.index', $data);
+    }
+
+//admin
+    public function adminGet() {
+        $filter = Request()->filter;
+        if ($filter == 'soft') {
+            $data['users'] = User::onlyTrashed()->whereHas("roles", function($q) {
+                        $q->where('name', 'SuperAdmin')->orWhere('name', 'Admin');
+                    })->with('user_statuses')->orderBy('created_at', 'desc')->paginate(15);
+        } else {
+            $data['users'] = User::whereHas("roles", function($q) {
+                        $q->where('name', 'SuperAdmin')->orWhere('name', 'Admin');
+                    })->with('user_statuses')->orderBy('created_at', 'desc')->paginate(15);
+        }
+
+        return view('admin.all-admins', $data);
+    }
+
+    public function unblock($id) {
+        $user = User::find($id);
+        $user->update([
+            'status_id' => 1
+        ]);
+
+        session()->flash('message.alert', 'success');
+        session()->flash('message.content', "User Unblocked");
+        return back();
+    }
+
+    public function block($id) {
+        $user = User::find($id);
+        $user->update([
+            'status_id' => 2
+        ]);
+
+        session()->flash('message.alert', 'success');
+        session()->flash('message.content', "User Blocked");
+        return back();
+    }
+
+    public function deleteTemporaryUser($id) {
+        $user = User::find($id);
+        $user->delete();
+
+        session()->flash('message.alert', 'success');
+        session()->flash('message.content', "User Soft Deleted");
+        return back();
+    }
+
+    public function deletePermanentlyUser($id) {
+        $user = User::find($id);
+        $user->forceDelete();
+
+        session()->flash('message.alert', 'success');
+        session()->flash('message.content', "User Hard Deleted");
+        return back();
+    }
+
+    public function restoreUser($id) {
+        User::where('id', $id)->restore();
+
+        session()->flash('message.alert', 'success');
+        session()->flash('message.content', "User Restored");
+        return back();
+    }
+
+    public function removeAdmin($id) {
+        $user = User::find($id);
+        $role = Role::whereName('Admin')->first();
+        $user->removeRole($role);
+        session()->flash('message.alert', 'success');
+        session()->flash('message.content', "Admin Removed from User");
+        return back();
+    }
+
+    public function removeSuperAdmin($id) {
+        $user = User::find($id);
+        $role = Role::whereName('SuperAdmin')->first();
+        $user->removeRole($role);
+        session()->flash('message.alert', 'success');
+        session()->flash('message.content', "SuperAdmin Removed from User");
+        return back();
+    }
+
+    public function makeAdmin($id) {
+        $user = User::find($id);
+        $role = Role::whereName('Admin')->first();
+        $user->assignRole($role);
+        session()->flash('message.alert', 'success');
+        session()->flash('message.content', "User is Now an Admin");
+        return back();
+    }
+
+    public function makeSuperAdmin($id) {
+        $user = User::find($id);
+        $role = Role::whereName('SuperAdmin')->first();
+        $user->assignRole($role);
+        session()->flash('message.alert', 'success');
+        session()->flash('message.content', "User is Now an SuperAdmin");
+        return back();
+    }
+
+    public function activity(Request $request) {
+        $control = $this->getControl($request);
+        $data['recents'] = $control->where('created_at', '>=', \Carbon\Carbon::now()->subDay())->with('user')->paginate(15);
+        return view('admin.activities', $data);
+    }
+
+    private function getControl(Request $request) {
+        if ($request->q) {
+            $input = $request->q;
+
+            $control = Post::where('title', 'LIKE', '%' . $input . '%');
+        } else {
+            $control = Post::latest();
+        }
+        return $control;
+    }
+
+    public function addPolitician(Request $request) {
+        $input = $request->all();
+        $rules = [
+            'first_name' => ['required', 'string'],
+            'last_name' => ['required', 'string'],
+            'dob' => ['required', 'string'],
+            'occupation' => ['required', 'string'],
+            'biography' => ['required', 'string'],
+            'children' => ['required', 'numeric'],
+            'spouse' => ['required', 'string'],
+            'education_history' => ['required', 'string'],
+            'education' => ['required', 'string'],
+            'career' => ['required', 'string'],
+            'website' => ['required', 'url'],
+            'political_history' => ['required', 'string'],
+            'file' => 'required|max:1024|mimes:png,jpg,jpeg'
+        ];
+
+
+        $error = static::getErrorMessage($input, $rules);
+        if ($error) {
+            return $error;
+        }
+        $name = $request->first_name . $request->last_name;
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+
+            $extension = $file->getClientOriginalExtension();
+            $nameslug = $this->slug($name, $extension);
+            $file->move(public_path('/politician/photos'), $nameslug);
+            $input['file'] = 'politician/photos/' . $nameslug;
+        }
+
+        $check = Politician::whereFirst_name($request->first_name)->whereLast_name($request->last_name)->first();
+        if (is_object($check)) {
+            session()->flash('message.alert', 'danger');
+            session()->flash('message.content', "Politician already Added");
+            return back();
+        }
+
+        Politician::create($input);
+        session()->flash('message.alert', 'success');
+        session()->flash('message.content', "Politician Added Successfully");
+        return back();
     }
 
 }

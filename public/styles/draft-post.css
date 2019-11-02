@@ -192,14 +192,14 @@ footer #copyright
 {
 	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.5);
 }
-#editor-section #btns-wrapper #save-draft
+#editor-section #btns-wrapper .save-draft
 {
 	color: #6D9BF1;
 	background-color: white;
 	border: 1px solid #6D9BF1;
 	margin: 0 2rem;
 }
-#editor-section #btns-wrapper #create-post
+#editor-section #btns-wrapper .create-post
 {
 	color: white;
 	background-color: #6D9BF1;
@@ -262,7 +262,7 @@ footer #copyright
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 		transition: 0.4s ease-out;
 	}
-	#editor-section #btns-wrapper #save-draft
+	#editor-section #btns-wrapper .save-draft
 	{
 		margin: 0;
 	}

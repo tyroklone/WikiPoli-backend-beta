@@ -13,11 +13,25 @@
                 <li class="nav-item active">
                     <a class="nav-link " href="{{url('posts')}}"><strong>Posts</strong></a>
                 </li>
+                @Auth
+                  <a class="nav-link" href="{{url('home')}}"><strong>{{Auth::user()->full_name}}</strong></a>
+                @else
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('login')}}"><strong>Login</strong></a>
                 </li>
+                @endAuth
+
+
             </ul>
+            @Auth
+             <a href="{{ route('logout') }}" id="btn" class="button-signup"
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                    </a>
+            @else
             <a href="{{route('register')}}" class="button-signup">Sign Up</a>
+            @endAuth
         </div>
     </nav>
 </div>

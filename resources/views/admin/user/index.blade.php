@@ -12,8 +12,8 @@
         </div>
         <div id="user-div">
             <span id="name-plate">
-                @if(session()->has('message.content'))
-                {!! session('message.content') !!} ,
+                @if(session()->has('login.content'))
+                {!! session('login.content') !!} ,
                 @endif
                 {{Auth::user()->full_name}}
             </span>
@@ -30,7 +30,7 @@
                     <form class="form-inline" method="GET" style="display: inline-block; margin-top: 10px;">
                         <select class="form-control" id="select-filter-user">
                             <option value="all" @if (Request()->filter) {{ 'selected' }} @endif >All</option>
-                            <option value="blocked" @if (Request()->filter && Request()->filter == 'blocked') {{ 'selected' }} @endif>Blocked</option>
+                          {{--  <option value="blocked" @if (Request()->filter && Request()->filter == 'blocked') {{ 'selected' }} @endif>Blocked</option>--}}
                             <option value="soft" @if (Request()->filter && Request()->filter == 'soft') {{ 'selected' }} @endif>Soft Deleted</option>
 
                         </select>
@@ -84,15 +84,16 @@
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                             @if (Request()->filter && Request()->filter == 'soft')
                                             <form  class="deleted"   role="form" method="POST"
-                                                   action="{{url('delete-restore-user',['id'=>$user->id])}}" >
+                                                   action="{{url('restore-user',['id'=>$user->id])}}" >
                                                 @csrf
                                                 <button  class="dropdown-item text-success noHover" type="submit"> <i class="fas fa-undo"></i> Restore</button>
                                             </form>
 
                                             @else
+                                            {{--
                                             <button class="dropdown-item text-success" data-toggle="modal" data-target="#myModal"><i class="fas fa-binoculars"></i> View</button>
                                             <button class="dropdown-item text-warning"  data-toggle="modal" data-target="#edit{{$user->id}}" ><i class="fas fa-edit"></i> Edit</button>
-
+                                           --}}
                                             <form  class="deleted"   role="form" method="POST"
                                                    action="{{url('delete-temporary-user',['id'=>$user->id])}}" >
                                                 @csrf
@@ -103,11 +104,26 @@
                                                 @csrf
                                                 <button  class="dropdown-item text-success noHover" type="submit"> <i class="fas fa-trash-alt"></i> Delete Permanently</button>
                                             </form>
+                                            @if($user->user_statuses->status == 'blocked')
+                                             <form  class="deleted"   role="form" method="POST"
+                                                   action="{{url('unblock-user',['id'=>$user->id])}}" >
+                                                @csrf
+                                                <button  class="dropdown-item text-success noHover" type="submit"> <i class="fas fa-unlock-alt"></i> Unblock</button>
+                                            </form>
+                                            @else
+                                             <form  class="deleted"   role="form" method="POST"
+                                                   action="{{url('block-user',['id'=>$user->id])}}" >
+                                                @csrf
+                                                <button  class="dropdown-item text-danger noHover" type="submit"> <i class="fas fa-lock"></i> Block</button>
+                                            </form>
+                                            @endif
+                                            
+                                            @hasanyrole('SuperAdmin')
                                             @if($user->hasanyrole('Admin'))
                                             <form  class="deleted"   role="form" method="POST"
                                                    action="{{url('remove-admin',['id'=>$user->id])}}" >
                                                 @csrf
-                                                <button  class="dropdown-item text-success noHover" type="submit"> <i class="fas fa-check-circle"></i> Remove Admin</button>
+                                                <button  class="dropdown-item text-danger noHover" type="submit"> <i class="fas fa-check-circle"></i> Remove Admin</button>
                                             </form>
                                             @elseif($user->hasanyrole('SuperAdmin'))
                                             <form  class="deleted"  role="form" method="POST"
@@ -128,6 +144,7 @@
                                                 <button  class="dropdown-item text-success noHover" type="submit"> <i class="fas fa-users"></i> Make SuperAdmin</button>
                                              </form>
                                             @endif
+                                            @endhasanyrole
                                             @endif
 
                                         </div>
@@ -163,9 +180,9 @@
                         @empty
                         <div class="text-center ">
                             @if (Request()->filter && Request()->filter == 'soft')
-                            <h5 class="grey-text">No Deleted Post yet.</h5>
+                            <h5 class="grey-text">No Deleted User yet.</h5>
                             @else
-                            <h5 class="grey-text">No Post yet.</h5>
+                            <h5 class="grey-text">No User yet.</h5>
                             @endif
                             <img src="{{asset('images/nothing.png')}}" width="40px" height="40">
                         </div>
