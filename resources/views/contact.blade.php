@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css">
   <link rel="stylesheet" href="{{ asset('css/styles/contact.css') }}"/>
   <link rel="icon" type="img/png" href="images/favicon.png">
-  <title>Contact Us</title>
+  <title>WikiPoli | Contact Us</title>
   <style>
     #footer{
              background: #6D9BF1 !important;
@@ -26,7 +26,7 @@
     <div class="container">
       <nav class="navbar navbar-expand-lg">
 
-        <a href="index.html" class="navbar-brand logo">
+        <a href="{{ url('/posts') }}" class="navbar-brand logo">
 
           <img src="https://res.cloudinary.com/fabianuzukwu/image/upload/v1571749198/c09e9odiqy2cvkosfubl.png"
             alt="WikiPoli Logo">

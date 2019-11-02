@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
     <div class="container">
-        <a href="/" class="logo"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571745363/u0zhq4fwslfr4u5lx5qt.png" alt="logo" class="img-fluid" width="150px;"></a>
+        <a href="{{ url('/posts') }}" class="logo"><img src="https://res.cloudinary.com/siyfa/image/upload/v1571745363/u0zhq4fwslfr4u5lx5qt.png" alt="logo" class="img-fluid" width="150px;"></a>
         <button class="navbar-toggler float-right custom-toggler" type="button" data-toggle="collapse" data-target="#navbar9" style="color: #000000;">
             <span class="navbar-toggler-icon"></span>
         </button>

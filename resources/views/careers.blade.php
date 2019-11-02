@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/styles/footer.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/styles/careers.css') }}"/>
     <link rel="icon" type="img/png" href="images/favicon.png">
-    <title>Careers </title>
+    <title>WikiPoli | Careers </title>
     <style>
 
 footer {
@@ -195,7 +195,7 @@ line-height: 1.5;
     <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
         <div class="container">
-            <a href="index.html" class="logo"><img
+            <a href="{{ url('/posts') }}" class="logo"><img
                     src="https://res.cloudinary.com/fabianuzukwu/image/upload/v1571749198/c09e9odiqy2cvkosfubl.png"
                     alt="logo" class="img-fluid" width="150px;"></a>
             <button class="navbar-toggler float-right custom-toggler" type="button" data-toggle="collapse"
@@ -205,7 +205,7 @@ line-height: 1.5;
             <div class="navbar-collapse collapse" id="navbar9">
                 <ul class="navbar-nav ml-auto">
                     , <li class="navbar-item mr-5">
-                        <a href="index.html" class="btn navbar-link" id="signUp">Home</a>
+                        <a href="{{ url('/posts') }}" class="btn navbar-link" id="signUp">Home</a>
                     </li>
                     <li class="navbar-item mr-5">
                         <a href="about.html" class="btn navbar-link" id="signUp">About Us</a>

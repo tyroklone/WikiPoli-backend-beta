@@ -125,7 +125,7 @@ a {
 
                     <!--link to take user to home page-->
                     
-                    <a href="{{ url('/') }}" class="button">Back To Home</a>
+                    <a href="{{ url('/posts') }}" class="button">Back To Home</a>
                     
                 </div>
 

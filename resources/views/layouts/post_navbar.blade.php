@@ -3,7 +3,7 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg">
 
-            <a href="index.html" class="navbar-brand logo">
+            <a href="{{ url('/posts') }}" class="navbar-brand logo">
 
                 <img src="https://res.cloudinary.com/fabianuzukwu/image/upload/v1571749198/c09e9odiqy2cvkosfubl.png" alt="WikiPoli Logo">
             </a>
